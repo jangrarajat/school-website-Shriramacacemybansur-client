@@ -7,6 +7,7 @@ import img4 from "../assets/school4.jpeg";
 import img5 from "../assets/school5.jpeg";
 import img6 from "../assets/school6.jpeg";
 import img7 from "../assets/school7.jpeg";
+import img8 from "../assets/school8.jpeg";
 import { FaEnvelope, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaPhoneAlt, FaYoutube } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
@@ -15,7 +16,7 @@ import Footer from "../components/Footer";
 export default function Home() {
 
     const images = [
-        img1, img2, img3, img4, img5, img6, img7
+        img1, img2, img3, img4, img5, img6, img7, img8
     ];
 
     const [index, setIndex] = useState(0);
@@ -146,7 +147,7 @@ export default function Home() {
 
                 <div className="aboutContainer">
 
-                    <h1 className="aboutTitle">
+                    <h1 className="aboutTitle uppercase">
 
                         About Our School
 
@@ -158,11 +159,24 @@ export default function Home() {
 
                         {/* Left Image */}
 
-                        <div className="aboutImageBox">
+                        <div className="aboutImageBox  h-full bg-red-500">
+
 
                             <img
-                                src={images[0]}
-                                className="aboutImage"
+                                src={images[4]}
+                                className=" w-full h-full"
+                            />
+                            <img
+                                src={images[1]}
+                                className=" w-full h-full"
+                            />
+                            <img
+                                src={images[5]}
+                                className=" w-full h-full"
+                            />
+                            <img
+                                src={images[3]}
+                                className=" w-full h-full"
                             />
 
                         </div>
@@ -172,21 +186,42 @@ export default function Home() {
 
                         <div className="aboutText">
 
-                            <h2>
+                            <h2 className=" uppercase">
 
                                 Excellence Through Innovation
 
                             </h2>
 
-                            <p className=" font-thin ">
+                            <p className=" font-sans ">
 
-                                The Shriram Foundation School has been a beacon of
-                                educational excellence committed to nurturing
-                                young minds and fostering a love for learning.
+                                The Shriram Foundation School
+                                The Shriram Foundation School is a well-known and trusted school that provides quality education from Pre-Primary to Class 10th. We focus on building a strong academic foundation while also teaching discipline, good values, and confidence.
+                                Our aim is not only to help students score good marks but also to help them grow into responsible, confident, and successful individuals.
+                                We provide special preparation for important entrance exams like Navodaya Vidyalaya, Sainik School, Military School, and RIMC. With the support of experienced teachers, regular tests, proper study material, and personal guidance, we help students achieve their goals.
+                                <br />    <span className=" text-blue-600 text-2xl ">    Why Choose Us?</span>
+                                <ul>
+                                    <li> ✔ English & Hindi Medium School</li>
+                                    <li> ✔ Classes from Pre-Primary to 10th</li>
+                                    <li> ✔ Special Foundation Classes</li>
+                                    <li> ✔ Continuous Performance Monitoring</li>
+                                    <li>✔ Residential Facility for Boys & Girls</li>
+                                    <li> ✔ Residential Facility for Boys & Girls</li>
+                                    <li>✔ Safe, Disciplined & Student-Friendly Campus</li>
+                                    <li>✔ Focus on Academic Excellence & Character Development</li>
+                                    <li>✔Activity-Based Learning</li>
+                                    <li>✔ English & Hindi Communication Practice</li>
+                                    <li> ✔ Development of Social & Moral Values</li>
+                                    <li>✔ Focus on Confidence & Creativity</li>
+                                    <li>✔ Personal Care & Attention</li>
+                                </ul>
+
+
+
+                                At The Shriram Foundation School, we believe every child has talent and potential. With the right guidance, care, and learning environment, we help students build a bright and successful future.
 
                             </p>
 
-                            <p className=" font-thin ">
+                            <p className=" font-sans ">
 
                                 With modern facilities and experienced teachers,
                                 we ensure every student reaches their full potential.
@@ -200,7 +235,7 @@ export default function Home() {
                             <div className="missionVision">
 
 
-                                <div className="missionBox">
+                                <div className="shadow-black/25  rounded-3xl shadow-lg hover:scale-105 duration-300  missionBox ">
 
                                     <h3>
 
@@ -208,7 +243,7 @@ export default function Home() {
 
                                     </h3>
 
-                                    <p className=" font-thin ">
+                                    <p className=" font-san ">
 
                                         To provide quality education and develop
                                         creativity and character in students.
@@ -218,7 +253,7 @@ export default function Home() {
                                 </div>
 
 
-                                <div className="visionBox">
+                                <div className="shadow-black/25  rounded-3xl shadow-lg hover:scale-105 duration-300  visionBox">
 
                                     <h3>
 
@@ -226,7 +261,7 @@ export default function Home() {
 
                                     </h3>
 
-                                    <p className=" font-thin ">
+                                    <p className=" font-sans">
 
                                         To become a leading school providing
                                         modern education and strong values.
@@ -259,7 +294,7 @@ export default function Home() {
                         <div className="principalImageBox">
 
                             <img
-                                src="https://res.cloudinary.com/drrj8rl9n/image/upload/v1772189649/WhatsApp_Image_2026-02-27_at_4.19.43_PM_fkrafv.jpg"
+                                src="https://res.cloudinary.com/drrj8rl9n/image/upload/v1772206829/WhatsApp_Image_2026-02-27_at_9.07.12_PM_mcjoyi.jpg"
                                 className="principalImage"
                             />
 
@@ -270,28 +305,20 @@ export default function Home() {
                         {/* Text */}
 
                         <div className="principalText">
-                            <h1 className="text-4xl text-orange-600">Kuldeep Choudhary <span className=" text-white">||</span> <span className=" text-2xl text-yellow-500">Managing Director</span></h1>
+                            <h1 className="text-4xl  uppercase ">Dharampal Kumhar <span className=" text-white">||</span> <span className=" text-2xl  ">Principal </span></h1>
 
-                            <h2>
-
-                               Managing Director Massage 
-
-                            </h2>
-
-
-                            <p className=" font-thin">
-
-                                Welcome to The Shriram Foundation School family!
-                                We believe education is not only about academic
-                                achievement but overall development of students.
-
-                                Our teachers work hard to create an environment
-                                where learning is joyful and students succeed.
-
+                            <p className="  font-sans font-light  text-gray-400">
+                                The SHRIRAM FOUNDATION School
+                                At The SHRIRAM FOUNDATION School, we are committed to providing quality education from Pre-Primary to 10th Class with strong academic foundations, discipline, and moral values.
+                                Along with regular studies, we provide special coaching and guidance for prestigious entrance exams like JNVST, AISSEE, RMS, and RIMC. Our experienced teachers focus on clear concepts, personality development, and overall growth of every child.
+                                Dear Students, believe in yourself, stay disciplined, respect your teachers and parents, and never stop learning. Hard work, honesty, and dedication are the keys to success.
+                                With the strong support of parents, we aim to shape confident, disciplined, and successful future leaders.
+                                Principal
+                                The SHRIRAM FOUNDATION School
                             </p>
 
 
-                            
+
 
 
                         </div>
@@ -306,9 +333,9 @@ export default function Home() {
 
                 <div className="facultySection">
 
-                    <h1 className="facultyTitle">
+                    <h1 className="facultyTitle uppercase">
 
-                        Our Dedicated Faculty
+                        Our Team
 
                     </h1>
 
@@ -320,32 +347,29 @@ export default function Home() {
                     </p>
 
 
-                    <div className="facultyGrid">
+                    <div className="facultyGrid ">
 
 
                         {/* Teacher 1 */}
 
-                        <div className="facultyCard">
+                        <div className=" shadow-black/25  rounded-3xl shadow-lg hover:scale-105 duration-300 ">
 
+                            <div className="facultyInfo  ">
 
+                                <h3 className=" uppercase text-2xl">Kuldeep Choudhary </h3>
 
-                            <div className="facultyInfo">
+                                <p className="subject uppercase border border-b-gray-500 pb-4">
 
-                                <h3>Dharampal Kumhar </h3>
-
-                                <p className="subject">
-
-                                    Principal
+                                    Managing Director
 
                                 </p>
 
+                                <p className=" font-sans text-gray-600  uppercase">
+
+                                    At The Shriram Foundation School, we guide students with strong academics, discipline, and values, including preparation for Navodaya, Sainik, Military School, and RIMC, helping students achieve success through dedication and confidence.
+                                </p>
 
 
-                                <button className="learnBtn">
-
-                                    Learn More
-
-                                </button>
 
                             </div>
 
@@ -353,54 +377,48 @@ export default function Home() {
 
 
 
-                    
+
 
 
 
                         {/* Teacher 3 */}
 
-                        <div className="facultyCard">
-
-
-
-                            <div className="facultyInfo">
-
-                                <h3>Ankesh Choudhary </h3>
-
-                                <p className="subject">
-
-                                    Preschool Coordinator
-
+                        <div className=" shadow-black/25  rounded-3xl shadow-lg hover:scale-105 duration-300  ">
+                            <div className="facultyInfo  uppercase ">
+                                <h3 className="text-2xl">Koushal Kumar Dahiya</h3>
+                                <p className="subject  border border-b-gray-500 pb-4">
+                                    DIRECTOR
                                 </p>
-
-                                <p className="qualification">
-
-                                    ✔ Qualification: M.Sc Physics, B.Ed
-
+                                <p className=" font-sans text-gray-600 ">
+                                    Welcome to The Shriram Foundation School. We provide quality education in a safe environment, helping students build knowledge, discipline, confidence, and values to become responsible and successful individuals in life.
                                 </p>
-
-                                <button className="learnBtn">
-
-                                    Learn More
-
-                                </button>
-
                             </div>
-
                         </div>
 
 
+                        <div className=" shadow-black/25  rounded-3xl shadow-lg hover:scale-105 duration-300  ">
+                            <div className="facultyInfo  uppercase ">
+                                <h3 className="text-2xl">Ankesh Choudhary </h3>
+                                <p className="subject border border-b-gray-500 pb-6">
+                                    Preschool Coordinator
+                                </p>
+                                <p className=" font-sans text-gray-600 ">
+                                    Pre-Primary Wing (LKG to Class 3):
+                                    <br />  At The Shriram Foundation School, our Pre-Primary Wing builds strong basic skills through fun learning in a safe environment, helping children grow with confidence, discipline, and good values.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
 
-            \
+
 
 
 
                 {/* FOOTER */}
 
-              <Footer/>
+                <Footer />
             </div>
         </>
 

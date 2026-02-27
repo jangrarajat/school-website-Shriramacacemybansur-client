@@ -12,7 +12,7 @@ export default function Footer() {
 
             <div className="joinSection">
 
-                <h1>
+                <h1 className=" uppercase">
 
                     Ready to Join Our School?
 
@@ -28,11 +28,11 @@ export default function Footer() {
 
                 <div className="joinButtons">
 
-                    <Link to="/admission">
+                    <Link to="/talent " className=" uppercase">
 
-                        <button className="applyBtn text-gray-600">
+                        <button className="applyBtn uppercase text-gray-600">
 
-                            Apply Now
+                            talentine exam
 
                         </button>
 
@@ -41,7 +41,7 @@ export default function Footer() {
 
                     <Link to="/contact">
 
-                        <button className="contactBtn">
+                        <button className="contactBtn uppercase">
 
                             Contact Us
 

@@ -142,7 +142,7 @@ export default function About() {
 
                             <h2>Our Mission</h2>
 
-                            <p>
+                            <p className=" font-sans text-gray-700">
 
                                 To provide a comprehensive education that develops
                                 critical thinking, creativity and character in every student.
@@ -157,7 +157,7 @@ export default function About() {
 
                             <h2>Our Vision</h2>
 
-                            <p>
+                            <p className=" text-gray-700">
 
                                 To be a leading institution fostering innovation,
                                 integrity and inclusive education. We aim to produce

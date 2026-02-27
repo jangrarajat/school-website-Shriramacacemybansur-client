@@ -1,4 +1,4 @@
-import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaClock, FaEnvelope, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaPhoneAlt, FaYoutube } from "react-icons/fa";
 
 export default function Topbar() {
     return (
@@ -7,15 +7,15 @@ export default function Topbar() {
                 
                 {/* Contact Info */}
                 <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-[10px] md:text-xs">
-                    <span className="flex items-center gap-1">📞 7733902183</span>
-                    <span className="lowercase flex items-center gap-1">📨 Shriramacacemybansur@gmail.com</span>
+                    <span className="flex items-center gap-1 font-sans"><FaPhoneAlt/> 7733902183</span>
+                    <span className="lowercase flex items-center gap-1 font-sans"> <FaEnvelope/> Shriramacacemybansur@gmail.com</span>
                 </div>
 
                 {/* Timing & Socials */}
                 <div className="flex items-center gap-4">
-                    <div className="hidden sm:flex items-center gap-4 text-[10px] md:text-xs border-r border-white/30 pr-4">
-                        <span>⏰ 8AM - 2PM</span>
-                        <span className="uppercase">📍 Bansur, Rajasthan</span>
+                    <div className="hidden sm:flex items-center  gap-4 text-[10px] md:text-xs border-r border-white/30 pr-4">
+                        <span className=" flex items-center gap-2"><FaClock/> 8:00 AM - 5:00 PM & <span className=" uppercase">sunday</span> 10:00 AM - 2:00 PM</span>
+                        <span className="uppercase flex items-center gap-2"><FaMapMarkerAlt/> Bansur, Rajasthan</span>
                     </div>
                     
                     <div className="icons flex items-center gap-3">

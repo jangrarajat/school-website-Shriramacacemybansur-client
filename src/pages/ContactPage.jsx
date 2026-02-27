@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
 export default function ContactPage() {
 
@@ -70,8 +71,7 @@ export default function ContactPage() {
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
-                                    className="w-full border p-3 rounded-lg focus:outline-none focus:border-blue-500"
-                                />
+ className="w-full border p-3 rounded-lg focus:outline-none focus:border-blue-500 order  border-gray-500"                                />
 
 
                                 <input
@@ -81,8 +81,7 @@ export default function ContactPage() {
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    className="w-full border p-3 rounded-lg focus:outline-none focus:border-blue-500"
-                                />
+ className="w-full border p-3 rounded-lg focus:outline-none focus:border-blue-500 order  border-gray-500"                                />
 
 
                                 <input
@@ -92,7 +91,7 @@ export default function ContactPage() {
                                     value={formData.phone}
                                     onChange={handleChange}
                                     required
-                                    className="w-full border p-3 rounded-lg focus:outline-none focus:border-blue-500"
+                                    className="w-full border p-3 rounded-lg focus:outline-none focus:border-blue-500 order  border-gray-500"
                                 />
 
 
@@ -102,8 +101,7 @@ export default function ContactPage() {
                                     value={formData.message}
                                     onChange={handleChange}
                                     required
-                                    className="w-full border p-3 rounded-lg h-32 focus:outline-none focus:border-blue-500"
-                                />
+ className="w-full border p-3 rounded-lg focus:outline-none focus:border-blue-500 order  border-gray-500"                                />
 
 
                                 <button
@@ -134,21 +132,21 @@ export default function ContactPage() {
                                 </h2>
 
 
-                                <p className="mb-3">
+                                <p className="mb-3 flex items-center gap-2">
 
-                                    📞 <b>Mobile:</b> 9876543210
-
-                                </p>
-
-                                <p className="mb-3">
-
-                                    📧 <b>Email:</b> school@gmail.com
+                                    <FaPhoneAlt/> <b>Mobile:</b> 7733902183
 
                                 </p>
 
-                                <p className="mb-3">
+                                <p className="mb-3 flex items-center  gap-2">
 
-                                    📍 <b>Address:</b> ABC Public School Jaipur Rajasthan
+                                <FaEnvelope/><b>Email:</b> Shriramacacemybansur@gmail.com
+
+                                </p>
+
+                                <p className="mb-3 flex items-center  gap-2">
+
+                                    <FaMapMarkerAlt/> <b>Address:</b> Shubhash Chowk, Kotputli Raod, Bansur (Kotputli-Behror) - Raj.
 
                                 </p>
 

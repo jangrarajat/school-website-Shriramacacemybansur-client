@@ -2,6 +2,7 @@ import { useState } from "react"
 import logo from "../assets/logo.png"
 import ButtonLoader from "../components/ButtonLoader"
 import Navbar from "../components/Navbar"
+import { FaImage } from "react-icons/fa"
 
 export default function TalentExam() {
     const [submitLoader, setSubmitLoader] = useState(false)
@@ -111,30 +112,31 @@ export default function TalentExam() {
 
                 {!student ? (
                     <div className="max-w-xl mx-auto border p-6 rounded shadow bg-white">
-                        <h1 className="text-xl font-bold mb-4 text-center text-blue-800 uppercase">SHRIRAM ACADEMY - talentine exam FORM</h1>
-                        <form onSubmit={submit} className="flex flex-col gap-3">
-                            <input className="border p-2 rounded" placeholder="Student Name" name="student_name" onChange={handleChange} />
-                            <input className="border p-2 rounded" placeholder="Father Name" name="father_name" onChange={handleChange} />
-                            <input className="border p-2 rounded" placeholder="Mother Name" name="mother_name" onChange={handleChange} />
+                        <h1 className="text-xl font-bold mb-4 text-center text-blue-900  uppercase">the shriram foundation school talentine exam form 2026</h1>
+                        <form onSubmit={submit} className="flex flex-col gap-3  p-4  rounded-xl">
+                            <input className="border p-2 rounded  border-gray-500" placeholder="Student Name" name="student_name" onChange={handleChange} />
+                            <input className="border p-2 rounded border-gray-500" placeholder="Father Name" name="father_name" onChange={handleChange} />
+                            <input className="border p-2 rounded border-gray-500" placeholder="Mother Name" name="mother_name" onChange={handleChange} />
                             <div className="flex gap-2">
-                                <input type="date" className="border p-2 w-1/2 rounded" name="dob" onChange={handleChange} />
-                                <select className="border p-2 w-1/2 rounded" name="student_class" onChange={handleChange}>
+                                <input type="date" className="border p-2 w-1/2 rounded border-gray-500" name="dob" onChange={handleChange} />
+                                <select className="border p-2 w-1/2 rounded border-gray-500" name="student_class" onChange={handleChange}>
                                     <option value="">Select Class</option>
                                     {["3", "4", "5", "6", "7", "8", "9"].map(c => <option key={c} value={c}>{c}</option>)}
                                 </select>
                             </div>
-                            <input className="border p-2 rounded" placeholder="Mobile Number" name="mobile" onChange={handleChange} />
-                            <select className="border p-2 rounded" name="medium" onChange={handleChange}>
-                                <option value="Hindi">Hindi</option>
+                            <input className="border p-2 rounded border-gray-500" placeholder="Mobile Number" name="mobile" onChange={handleChange} />
+                            <select className="border p-2 rounded border-gray-500" name="medium" onChange={handleChange}>
+                                <option value="English">Select medium</option>
                                 <option value="English">English</option>
+                                <option value="Hindi">Hindi</option>
                                 <option value="Other">Other</option>
                             </select>
                             {form.medium === "Other" && <input className="border p-2 rounded" placeholder="Specify Medium" name="other_medium" onChange={handleChange} />}
-                            <input className="border p-2 rounded" placeholder="School Name" name="school" onChange={handleChange} />
-                            <input className="border p-2 rounded" placeholder="Address" name="address" onChange={handleChange} />
-                            <div className="flex flex-col gap-1">
-                                <label className="text-xs font-bold text-gray-600">Upload Student Photo:</label>
-                                <input type="file" className="border p-1 rounded" onChange={handlePhoto} />
+                            <input className="border p-2 rounded border-gray-500" placeholder="School Name" name="school" onChange={handleChange} />
+                            <input className="border p-2 rounded border-gray-500" placeholder="Address" name="address" onChange={handleChange} />
+                            <div className="flex flex-col cursor-pointer gap-1 justify-center items-center border p-3 rounded-sm border-gray-500">
+                                <label htmlFor="file" className=" text-xs font-bold text-gray-600  flex items-center gap-2  ">Upload Student Photo: <FaImage /></label>
+                                <input id="file" type="file" className="border p-1 rounded hidden border-gray-500" onChange={handlePhoto} />
                             </div>
                             <button className="bg-blue-600 flex justify-center items-center text-white p-4 rounded font-bold hover:bg-blue-700 transition">
                                 {submitLoader ? (<ButtonLoader />) : "Submit Form"}
