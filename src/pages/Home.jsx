@@ -357,10 +357,7 @@ export default function Home() {
 
                     <div className="facultyCard">
 
-                        <img
-                            src="/src/assets/principal.jpg"
-                            className="facultyImage"
-                        />
+                      
 
                         <div className="facultyInfo">
 
@@ -394,10 +391,7 @@ export default function Home() {
 
                     <div className="facultyCard">
 
-                        <img
-                            src="/src/assets/principal.jpg"
-                            className="facultyImage"
-                        />
+                       
 
                         <div className="facultyInfo">
 
@@ -431,10 +425,7 @@ export default function Home() {
 
                     <div className="facultyCard">
 
-                        <img
-                            src="/src/assets/principal.jpg"
-                            className="facultyImage"
-                        />
+                      
 
                         <div className="facultyInfo">
 
