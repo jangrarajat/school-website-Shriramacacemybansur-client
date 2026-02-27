@@ -1,4 +1,4 @@
-import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa"
+import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn, FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
 export default function Footer() {
@@ -112,31 +112,27 @@ export default function Footer() {
                     {/* Contact */}
 
                     <div className="footerBox">
+                        <ul>
+                            <li className=" mb-5">
+                                Contact Us
+                            </li>
+                            <li className=" flex items-center gap-2">
+                                <FaPhoneAlt /> 7733902183
+                            </li>
+                            <li className=" flex items-center gap-2">
+                                <FaEnvelope /> Shriramacacemybansur@gmail.com
+                            </li>
+                            <li className=" flex items-center gap-2">
+                                <FaMapMarkerAlt />  Shubhash Chowk, Kotputli Road,
+                                Bansur Rajasthan pin-code  301024
+                            </li>
+                        </ul>
+                  
 
-                        <h3>
+       
+ 
 
-                            Contact Us
-
-                        </h3>
-
-                        <p className=" flex items-center gap-2">
-
-                            <FaPhoneAlt/> 7733902183
-
-                        </p>
-
-                        <p className=" flex items-center gap-2">
-
-                            ✉ Shriramacacemybansur@gmail.com
-
-                        </p>
-
-                        <p className=" flex items-center gap-2">
-
-                        <FaMapMarkerAlt/>  Shubhash Chowk, Kotputli Road,
-                            Bansur Rajasthan pin-code  301024
-
-                        </p>
+                     
 
                     </div>
 
