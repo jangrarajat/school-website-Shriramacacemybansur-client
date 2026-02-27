@@ -35,9 +35,6 @@ export default function TalentExam() {
         }
     }
 
-
- 
-
     const submit = async (e) => {
         e.preventDefault()
         setSubmitLoader(true)
@@ -106,40 +103,94 @@ export default function TalentExam() {
                 }
                 .table-custom { width: 100%; border-collapse: collapse; margin-top: 10px; }
                 .table-custom th, .table-custom td { border: 1px solid black; padding: 5px; text-align: center; font-size: 14px; }
+                
+                /* Accordion Styling */
+                details summary { cursor: pointer; transition: 0.3s; }
+                details[open] summary { margin-bottom: 10px; color: #2563eb; }
             `}} />
 
                 {!student ? (
                     <div className="max-w-xl mx-auto border p-6 rounded shadow bg-white">
-                        <h1 className="text-xl font-bold mb-4 text-center">SHRIRAM ACADEMY - TALENT EXAM FORM</h1>
+                        <h1 className="text-xl font-bold mb-4 text-center text-blue-800">SHRIRAM ACADEMY - TALENT EXAM FORM</h1>
                         <form onSubmit={submit} className="flex flex-col gap-3">
-                            <input className="border p-2" placeholder="Student Name" name="student_name" onChange={handleChange} />
-                            <input className="border p-2" placeholder="Father Name" name="father_name" onChange={handleChange} />
-                            <input className="border p-2" placeholder="Mother Name" name="mother_name" onChange={handleChange} />
+                            <input className="border p-2 rounded" placeholder="Student Name" name="student_name" onChange={handleChange} />
+                            <input className="border p-2 rounded" placeholder="Father Name" name="father_name" onChange={handleChange} />
+                            <input className="border p-2 rounded" placeholder="Mother Name" name="mother_name" onChange={handleChange} />
                             <div className="flex gap-2">
-                                <input type="date" className="border p-2 w-1/2" name="dob" onChange={handleChange} />
-                                <select className="border p-2 w-1/2" name="student_class" onChange={handleChange}>
+                                <input type="date" className="border p-2 w-1/2 rounded" name="dob" onChange={handleChange} />
+                                <select className="border p-2 w-1/2 rounded" name="student_class" onChange={handleChange}>
                                     <option value="">Select Class</option>
                                     {["3", "4", "5", "6", "7", "8", "9"].map(c => <option key={c} value={c}>{c}</option>)}
                                 </select>
                             </div>
-                            <input className="border p-2" placeholder="Mobile Number" name="mobile" onChange={handleChange} />
-                            <select className="border p-2" name="medium" onChange={handleChange}>
+                            <input className="border p-2 rounded" placeholder="Mobile Number" name="mobile" onChange={handleChange} />
+                            <select className="border p-2 rounded" name="medium" onChange={handleChange}>
                                 <option value="Hindi">Hindi</option>
                                 <option value="English">English</option>
                                 <option value="Other">Other</option>
                             </select>
-                            {form.medium === "Other" && <input className="border p-2" placeholder="Specify Medium" name="other_medium" onChange={handleChange} />}
-                            <input className="border p-2" placeholder="School Name" name="school" onChange={handleChange} />
-                            <input className="border p-2" placeholder="Address" name="address" onChange={handleChange} />
-                            <input type="file" className="border p-1" onChange={handlePhoto} />
-                            <button className="bg-blue-600 flex  justify-center items-center text-white p-5 rounded font-bold">{submitLoader ? (<ButtonLoader />) : "Submit Form"}</button>
+                            {form.medium === "Other" && <input className="border p-2 rounded" placeholder="Specify Medium" name="other_medium" onChange={handleChange} />}
+                            <input className="border p-2 rounded" placeholder="School Name" name="school" onChange={handleChange} />
+                            <input className="border p-2 rounded" placeholder="Address" name="address" onChange={handleChange} />
+                            <div className="flex flex-col gap-1">
+                                <label className="text-xs font-bold text-gray-600">Upload Student Photo:</label>
+                                <input type="file" className="border p-1 rounded" onChange={handlePhoto} />
+                            </div>
+                            <button className="bg-blue-600 flex justify-center items-center text-white p-4 rounded font-bold hover:bg-blue-700 transition">
+                                {submitLoader ? (<ButtonLoader />) : "Submit Form"}
+                            </button>
                             {error && <p className="text-red-600 text-center font-bold">{error}</p>}
                         </form>
+
+                        {/* TERMS & CONDITIONS DROPDOWN */}
+                        <div className="mt-6 border-t pt-4">
+                            <details className="bg-gray-50 p-3 rounded-lg border">
+                                <summary className="font-bold text-blue-700 list-none flex items-center gap-2">
+                                    <span>▶</span> Exam Terms & Conditions (नियम एवं शर्तें)
+                                </summary>
+                                <div className="text-[13px] text-gray-700 mt-2 space-y-4">
+                                    <div className="english-terms">
+                                        <p className="font-bold border-b mb-1">English:</p>
+                                        <ol className="list-decimal ml-5 space-y-1">
+                                            <li>Before filling out the form, students must make sure they choose the correct group.</li>
+                                            <li>All information must be correct. Wrong info leads to rejection.</li>
+                                            <li>No changes allowed after submission.</li>
+                                            <li>Mistakes found in group/form leads to disqualification before result.</li>
+                                            <li>Admit card is mandatory for entry.</li>
+                                            <li>Bring Aadhaar Card and Admit Card to the center.</li>
+                                            <li>Reach the center 1 hour 30 minutes before exam time.</li>
+                                            <li>Maintain discipline in the exam hall.</li>
+                                            <li>Electronic devices (Mobile, Watch, Calculator) are strictly prohibited.</li>
+                                            <li>Cheating leads to immediate disqualification.</li>
+                                            <li>Merit rank students must complete document verification.</li>
+                                            <li>Selected students must submit Aadhaar and Marksheet photocopies at school.</li>
+                                        </ol>
+                                    </div>
+                                    <div className="hindi-terms">
+                                        <p className="font-bold border-b mb-1">Hindi:</p>
+                                        <ol className="list-decimal ml-5 space-y-1">
+                                            <li>फॉर्म भरने से पहले विद्यार्थी सही ग्रुप का चयन सुनिश्चित करें।</li>
+                                            <li>गलत या अधूरी जानकारी होने पर फॉर्म निरस्त किया जा सकता है।</li>
+                                            <li>जमा करने के बाद किसी भी प्रकार का परिवर्तन स्वीकार नहीं होगा।</li>
+                                            <li>गलती पाए जाने पर परिणाम से पहले परीक्षा से बाहर कर दिया जाएगा।</li>
+                                            <li>वैध प्रवेश पत्र के बिना परीक्षा कक्ष में प्रवेश की अनुमति नहीं होगी।</li>
+                                            <li>परीक्षा केंद्र पर आधार कार्ड और प्रवेश पत्र साथ लाना अनिवार्य है।</li>
+                                            <li>परीक्षा समय से 1 घंटा 30 मिनट पहले केंद्र पर उपस्थित होना होगा।</li>
+                                            <li>परीक्षा के सभी नियमों और अनुशासन का पालन करना होगा।</li>
+                                            <li>मोबाइल, स्मार्ट वॉच, कैलकुलेटर जैसे उपकरण प्रतिबंधित हैं।</li>
+                                            <li>नकल करते पाए जाने पर तुरंत अयोग्य घोषित कर दिया जाएगा।</li>
+                                            <li>रैंक में शामिल विद्यार्थियों को दस्तावेज सत्यापन करवाना अनिवार्य होगा।</li>
+                                            <li>चयनित विद्यार्थियों को मार्कशीट और आधार की कॉपी विद्यालय में जमा करनी होगी।</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
                     </div>
                 ) : (
+                    /* Admit Card Section remains the same */
                     <div className="flex flex-col items-center">
                         <div id="printArea" className="admit-card-box">
-                            {/* ADMIT CARD HEADER */}
                             <div className="flex items-center border-b-2 border-black pb-2 mb-3">
                                 <img src={logo} className="w-20 h-20 border border-black mr-4" alt="logo" />
                                 <div className="text-center flex-1">
@@ -150,8 +201,7 @@ export default function TalentExam() {
                                 </div>
                             </div>
 
-                            {/* STUDENT INFO SECTION */}
-                            <div className="flex justify-between  mb-4">
+                            <div className="flex justify-between mb-4">
                                 <div className="space-y-1 flex flex-col items-start font-bold text-gray-800">
                                     <p>Roll Number: <span className="text-2xl text-red-600">{student.roll}</span></p>
                                     <p>Student Name: {student.student_name}</p>
@@ -166,7 +216,6 @@ export default function TalentExam() {
                                 </div>
                             </div>
 
-                            {/* DETAILED EXAM TABLE */}
                             <h3 className="font-bold text-center underline uppercase">Exam Pattern & Marks Detail</h3>
                             <table className="table-custom">
                                 <thead className="bg-gray-100">
@@ -209,7 +258,6 @@ export default function TalentExam() {
                                 </tbody>
                             </table>
 
-                            {/* TERMS */}
                             <div className="mt-4 text-[12px] border-t border-black pt-2">
                                 <p className="font-bold underline">Instructions for Candidate:</p>
                                 <ul className="list-decimal ml-5 font-semibold">
@@ -220,7 +268,6 @@ export default function TalentExam() {
                                 </ul>
                             </div>
 
-                            {/* SIGNATURES */}
                             <div className="flex justify-between mt-8">
                                 <div className="text-center border-t border-black w-40 font-bold pt-1">Candidate Sign</div>
                                 <div className="text-center border-t border-black w-40 font-bold pt-1">Director Sign</div>

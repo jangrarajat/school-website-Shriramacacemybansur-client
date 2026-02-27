@@ -38,7 +38,7 @@ export default function Navbar() {
                     <Link to="/about" onClick={() => setMenu(false)} className="font-semibold text-gray-700 hover:text-blue-600 transition">About</Link>
                     <Link to="/admission" onClick={() => setMenu(false)} className="font-semibold text-gray-700 hover:text-blue-600 transition">Admission</Link>
                     <Link to="/talent" onClick={() => setMenu(false)} className="font-semibold text-gray-700 hover:text-blue-600 transition text-center">Talent Exam</Link>
-                    <Link to="/gallery" onClick={() => setMenu(false)} className="font-semibold text-gray-700 hover:text-blue-600 transition">Gallery</Link>
+                    <Link to="/" onClick={() => setMenu(false)} className="font-semibold text-gray-700 hover:text-blue-600 transition">Gallery</Link>
                     <Link to="#" onClick={() => setMenu(false)} className="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">Contact</Link>
                 </div>
 
