@@ -13,6 +13,8 @@ import AdminExam from "./pages/AdminExam"
 
 import { Routes, Route } from "react-router-dom"
 import TalentExam from "./pages/TalentExam"
+import ContactPage from "./pages/ContactPage"
+import GalleryPage from "./pages/GalleryPage"
 
 function App() {
 
@@ -21,9 +23,6 @@ function App() {
         <div>
 
             <Topbar />
-
-           
-
 
             <Routes>
 
@@ -40,14 +39,15 @@ function App() {
                 <Route path="/talent" element={<TalentExam />} />
 
                 <Route path="/admin/exam" element={<AdminExam />} />
-
+                <Route path="/contect" element={<ContactPage/>} />
+                <Route path="/gallery" element={<GalleryPage/>} />
 
 
 
             </Routes>
 
 
-        
+
 
 
         </div>

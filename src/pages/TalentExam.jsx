@@ -111,7 +111,7 @@ export default function TalentExam() {
 
                 {!student ? (
                     <div className="max-w-xl mx-auto border p-6 rounded shadow bg-white">
-                        <h1 className="text-xl font-bold mb-4 text-center text-blue-800">SHRIRAM ACADEMY - TALENT EXAM FORM</h1>
+                        <h1 className="text-xl font-bold mb-4 text-center text-blue-800 uppercase">SHRIRAM ACADEMY - talentine exam FORM</h1>
                         <form onSubmit={submit} className="flex flex-col gap-3">
                             <input className="border p-2 rounded" placeholder="Student Name" name="student_name" onChange={handleChange} />
                             <input className="border p-2 rounded" placeholder="Father Name" name="father_name" onChange={handleChange} />
@@ -274,7 +274,7 @@ export default function TalentExam() {
                             </div>
                         </div>
 
-                        <button onClick={() => window.print()} className="no-print bg-green-700 text-white px-8 py-3 rounded-full font-bold mt-5 shadow-xl hover:scale-105 transition">
+                        <button onClick={() => window.print()} onTouchStart={() => window.print()} className="no-print bg-green-700 text-white px-8 py-3 rounded-full font-bold mt-5 shadow-xl hover:scale-105 transition">
                             PRINT ADMIT CARD
                         </button>
                     </div>
