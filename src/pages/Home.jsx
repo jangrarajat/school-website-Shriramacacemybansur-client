@@ -291,11 +291,7 @@ export default function Home() {
                             </p>
 
 
-                            <h3>
-
-                                Principal
-
-                            </h3>
+                            
 
 
                         </div>
