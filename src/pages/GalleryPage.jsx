@@ -131,9 +131,9 @@ export default function GalleryPage() {
 
                     {selectedImage && (
 
-                        <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
+                        <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center  z-50">
 
-                            <div className="relative">
+                            <div className="relative  top-24">
 
 
                                 <img
