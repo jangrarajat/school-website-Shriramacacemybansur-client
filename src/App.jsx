@@ -39,7 +39,7 @@ function App() {
                 <Route path="/talent" element={<TalentExam />} />
 
                 <Route path="/admin/exam" element={<AdminExam />} />
-                <Route path="/contect" element={<ContactPage/>} />
+                <Route path="/contact" element={<ContactPage/>} />
                 <Route path="/gallery" element={<GalleryPage/>} />
 
 

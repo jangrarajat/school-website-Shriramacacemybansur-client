@@ -1,4 +1,4 @@
-import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa"
+import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
 export default function Footer() {
@@ -30,7 +30,7 @@ export default function Footer() {
 
                     <Link to="/admission">
 
-                        <button className="applyBtn">
+                        <button className="applyBtn text-gray-600">
 
                             Apply Now
 
@@ -119,22 +119,22 @@ export default function Footer() {
 
                         </h3>
 
-                        <p>
+                        <p className=" flex items-center gap-2">
 
-                            📞 7733902183
+                            <FaPhoneAlt/> 7733902183
 
                         </p>
 
-                        <p>
+                        <p className=" flex items-center gap-2">
 
                             ✉ Shriramacacemybansur@gmail.com
 
                         </p>
 
-                        <p>
+                        <p className=" flex items-center gap-2">
 
-                            📍 Shubhash Chowk, Kotputli Road,
-                            Bansur Rajasthan
+                        <FaMapMarkerAlt/>  Shubhash Chowk, Kotputli Road,
+                            Bansur Rajasthan pin-code  301024
 
                         </p>
 

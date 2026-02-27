@@ -10,6 +10,7 @@ import img7 from "../assets/school7.jpeg";
 import { FaEnvelope, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaPhoneAlt, FaYoutube } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 export default function Home() {
 
@@ -63,110 +64,82 @@ export default function Home() {
             <div>
 
 
-                <div className="slider">
+                <div className="relative w-full overflow-hidden bg-gray-900 group">
+                    {/* Image Container with Fixed Height */}
+                    <div className="relative w-full h-[60vh] md:h-[85vh] overflow-hidden">
+                        <img
+                            src={images[index]}
+                            alt="School Slide"
+                            className="w-full h-full object-cover transition-transform duration-700 scale-105 group-hover:scale-100"
+                        />
+                        {/* Dark Overlay for better text contrast */}
+                        <div className="absolute inset-0 bg-black/40 bg-gradient-to-t from-black/70 via-transparent to-black/30"></div>
+                    </div>
 
+                    {/* Hero Text Content */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
 
-                    {/* Image */}
+                        {/* Badge / Small Title */}
+                        <span className="mb-4 px-4 py-1 bg-yellow-400 text-black text-xs md:text-sm font-bold uppercase tracking-[0.2em] rounded-full shadow-lg animate-bounce">
+                            Welcome to Excellence
+                        </span>
 
-                    <img
-
-                        src={images[index]}
-
-                        className="slideImage"
-
-                    />
-
-
-
-                    {/* Left Text */}
-
-                    <div className="heroText flex flex-col items-center justify-center text-center px-4 py-10 md:py-24 min-h-[60vh]">
-
-                        {/* Main Title - मोबाइल पर text-2xl/3xl और डेस्कटॉप पर 8xl तक */}
-                        <h1 className="w-full max-w-5xl text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-black uppercase tracking-tight leading-[1.2] sm:leading-[1.1] bg-gradient-to-r from-blue-700 via-blue-500 to-indigo-600 bg-clip-text text-transparent drop-shadow-md px-2">
-                            The Shriram <br className="hidden sm:block" /> Foundation School
+                        {/* Main Title */}
+                        <h1 className="w-full max-w-5xl text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold uppercase tracking-tight leading-tight text-white drop-shadow-2xl">
+                            The Shriram <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-yellow-500">
+                                Foundation School
+                            </span>
                         </h1>
 
-                        {/* Subtitle - मोबाइल पर छोटा और सेंटर में */}
-                        <div className="mt-4 md:mt-6 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3">
-                            <span className="bg-yellow-400 px-3 py-1 text-black text-[10px] sm:text-sm md:text-lg font-black uppercase shadow-sm rotate-[-1deg] sm:rotate-0">
-                                Quality Education
-                            </span>
-                            <span className="bg-yellow-400 px-3 py-1 text-black italic font-bold text-xs sm:text-lg md:text-xl tracking-wide">
-                                For Bright Future
-                            </span>
-                        </div>
+                        {/* Subtitle / Slogan */}
+                        <p className="mt-4 max-w-2xl text-white/90 text-sm md:text-xl font-medium tracking-wide italic">
+                            "Quality Education For A Bright & Successful Future"
+                        </p>
 
-                        {/* Responsive Buttons - मोबाइल पर अगल-बगल (Row) लेकिन छोटे साइज में */}
-                        <div className="heroButtons  md:mt-12 flex flex-row items-center justify-center gap-3 md:gap-5 w-full max-w-sm sm:max-w-none px-2">
-
-                            {/* Contact Us - मोबाइल पर पैडिंग कम की गई है */}
-                            <Link to="/contect" className="flex-1 sm:flex-none text-center px-4 py-3 sm:px-10 sm:py-4 rounded-full border-2 border-blue-600 text-blue-600 font-bold uppercase tracking-tight sm:tracking-widest text-[10px] sm:text-sm hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg">
+                        {/* Action Buttons */}
+                        <div className="mt-8 md:mt-12 flex flex-row items-center justify-center gap-4 w-full">
+                            <Link
+                                to="/contact"
+                                className="px-6 py-3 md:px-10 md:py-4 rounded-full border-2 border-white text-white font-bold uppercase text-[10px] md:text-sm hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-sm"
+                            >
                                 Contact Us
                             </Link>
 
-                            {/* Admission Open - मोबाइल पर पैडिंग कम की गई है */}
-                            <Link to="/admission" className="relative group overflow-hidden flex-1 sm:flex-none text-center px-4 py-3 sm:px-10 sm:py-4 rounded-full bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold uppercase tracking-tight sm:tracking-widest text-[10px] sm:text-sm shadow-[0_10px_20px_rgba(234,88,12,0.3)] hover:shadow-[0_15px_30px_rgba(234,88,12,0.4)] transition-all duration-300 transform hover:scale-105 active:scale-95">
-                                <span className="relative z-10">Admission Open</span>
-                                <div className="absolute inset-0 bg-white/30 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-[-15deg]"></div>
+                            <Link
+                                to="/admission"
+                                className="relative overflow-hidden px-6 py-3 md:px-10 md:py-4 rounded-full bg-orange-600 text-white font-bold uppercase text-[10px] md:text-sm shadow-xl hover:bg-orange-500 transition-all transform hover:-translate-y-1 active:scale-95"
+                            >
+                                Admission Open
                             </Link>
-
                         </div>
                     </div>
 
-
-
-                    {/* Arrows */}
-
-                    <div className="arrow left"
-
+                    {/* Navigation Arrows - Only visible on hover */}
+                    <button
                         onClick={prevSlide}
-
+                        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/40 text-white text-2xl transition-all opacity-0 group-hover:opacity-100"
                     >
-
                         ❮
-
-                    </div>
-
-
-                    <div className="arrow right"
-
+                    </button>
+                    <button
                         onClick={nextSlide}
-
+                        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/40 text-white text-2xl transition-all opacity-0 group-hover:opacity-100"
                     >
-
                         ❯
+                    </button>
 
+                    {/* Elegant Dots Navigation */}
+                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
+                        {images.map((_, i) => (
+                            <button
+                                key={i}
+                                onClick={() => setIndex(i)}
+                                className={`transition-all duration-300 rounded-full ${index === i ? "w-8 h-2 bg-yellow-400" : "w-2 h-2 bg-white/50 hover:bg-white"
+                                    }`}
+                            />
+                        ))}
                     </div>
-
-
-
-                    {/* Dots */}
-
-                    <div className="dots">
-
-                        {
-
-                            images.map((_, i) => (
-
-                                <span
-
-                                    key={i}
-
-                                    className={index === i ? "dot active" : "dot"}
-
-                                    onClick={() => setIndex(i)}
-
-                                ></span>
-
-                            ))
-
-                        }
-
-                    </div>
-
-
-
                 </div>
 
                 {/* ABOUT SECTION */}
@@ -301,7 +274,7 @@ export default function Home() {
 
                             <h2>
 
-                                Principal's Message
+                               Managing Director Massage 
 
                             </h2>
 
@@ -384,33 +357,7 @@ export default function Home() {
 
 
 
-                        {/* Teacher 2 */}
-
-                        <div className="facultyCard">
-
-
-
-                            <div className="facultyInfo">
-
-                                <h3>Manjeet Yadav</h3>
-
-                                <p className="subject">
-
-                                    Vice Principal
-
-                                </p>
-
-
-
-                                <button className="learnBtn">
-
-                                    Learn More
-
-                                </button>
-
-                            </div>
-
-                        </div>
+                    
 
 
 
@@ -451,174 +398,13 @@ export default function Home() {
 
                 </div>
 
-                {/* JOIN SCHOOL SECTION */}
-
-                <div className="joinSection">
-
-                    <h1>
-
-                        Ready to Join Our School?
-
-                    </h1>
-
-                    <p className=" font-thin">
-
-                        Take the first step towards a bright future.
-                        Explore our admission process and become
-                        part of our school family today.
-
-                    </p>
-
-                    <div className="joinButtons">
-
-                        <button className="applyBtn  text-blue-600">
-
-                            Apply Now
-
-                        </button>
-
-                        <button className="contactBtn">
-
-                            Contact Us
-
-                        </button>
-
-                    </div>
-
-                </div>
+            \
 
 
 
                 {/* FOOTER */}
 
-                <div className="footer">
-
-
-                    <div className="footerContainer">
-
-
-                        {/* School */}
-
-                        <div className="footerBox">
-
-                            <h3>
-
-                                Our School
-
-                            </h3>
-
-                            <p>
-
-                                Excellence in Education - Building bright
-                                futures for students.
-
-                            </p>
-
-                        </div>
-
-
-
-                        {/* Links */}
-
-                        <div className="footerBox">
-
-                            <h3>
-
-                                Quick Links
-
-                            </h3>
-
-                            <p>Home</p>
-                            <p>Admission</p>
-                            <p>Gallery</p>
-                            <p>Contact</p>
-
-                        </div>
-
-
-
-                        {/* Contact */}
-
-                        <div className="footerBox">
-
-                            <h3>
-
-                                Contact Us
-
-                            </h3>
-
-                            <p className="   flex items-center gap-2">
-
-                                <FaPhoneAlt />  7733902183
-
-                            </p>
-
-                            <p className="   flex items-center gap-2">
-
-                                <FaEnvelope />   Shriramacacemybansur@gmail.com
-
-                            </p>
-
-                            <p className="   flex items-center gap-2">
-
-                                <FaMapMarkerAlt /> Shubhash Chowk, Kotputli Road,
-                                Bansur Rajasthan
-
-                            </p>
-
-                        </div>
-
-
-
-                        {/* Social */}
-
-                        <div className="footerBox">
-
-                            <h3>
-
-                                Follow Us
-
-                            </h3>
-
-                            <div className="icons">
-
-                                <a href="https://www.facebook.com/share/1FqqMpuE7m/">
-
-                                    <FaFacebookF />
-
-                                </a>
-
-                                <a href="https://www.instagram.com/shriramacademybansur?igsh=Z3FrcjNmM2k1dXA5">
-
-                                    <FaInstagram />
-
-                                </a>
-
-                                <a href="https://youtube.com/@shriramacademybansur?si=DBOnHFWKPU5QqQux">
-
-                                    <FaYoutube />
-
-                                </a>
-
-
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div className="copyright">
-
-                        © 2026 The Shriram Foundation School
-
-                    </div>
-
-
-                </div>
+              <Footer/>
             </div>
         </>
 

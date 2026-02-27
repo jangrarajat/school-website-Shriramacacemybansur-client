@@ -9,18 +9,32 @@ export default function Navbar() {
     return (
         <nav className="navbar bg-white shadow-md sticky top-10 z-50 pt-5">
             <div className="container mx-auto px-4 py-2 flex justify-between items-center">
-                
+
                 {/* Logo Section */}
-                <Link to="/" className="flex items-center gap-2">
-                    <img src={logo} className="w-10 h-10 md:w-12 md:h-12 object-contain" alt="logo" />
-                    <div className="font-bold text-sm md:text-lg leading-tight text-[#1e3a5f]">
-                        The Shriram <br className="md:hidden" /> Foundation School
+                <Link to="/" className="flex items-center gap-3 md:gap-4 group">
+                    {/* Enlarged Logo Container */}
+                    <div className="relative overflow-hidden">
+                        <img
+                            src={logo}
+                            className="w-12 h-12 md:w-16 md:h-16 object-contain transition-transform duration-300 group-hover:scale-110"
+                            alt="The Shriram Foundation School Logo"
+                        />
+                    </div>
+
+                    {/* School Name in Capital Letters */}
+                    <div className="flex flex-col justify-center">
+                        <h2 className="font-black text-sm md:text-xl lg:text-2xl tracking-tighter uppercase leading-none text-[#1e3a5f]">
+                            The Shriram
+                        </h2>
+                        <h2 className="font-bold text-[10px] md:text-sm lg:text-base tracking-[0.15em] uppercase leading-tight text-orange-600">
+                            Foundation School
+                        </h2>
                     </div>
                 </Link>
 
                 {/* Mobile Toggle Button */}
-                <button 
-                    className="md:hidden text-2xl text-[#1e3a5f] focus:outline-none" 
+                <button
+                    className="md:hidden text-2xl text-[#1e3a5f] focus:outline-none"
                     onClick={() => setMenu(!menu)}
                 >
                     {menu ? <FaTimes /> : <FaBars />}
@@ -39,7 +53,7 @@ export default function Navbar() {
                     <Link to="/admission" onClick={() => setMenu(false)} className="font-semibold text-gray-700 hover:text-blue-600 transition">Admission</Link>
                     <Link to="/talent" onClick={() => setMenu(false)} className="font-semibold text-gray-700 hover:text-blue-600 transition text-center">Talentine exam</Link>
                     <Link to="/gallery" onClick={() => setMenu(false)} className="font-semibold text-gray-700 hover:text-blue-600 transition">Gallery</Link>
-                    <Link to="/contect" onClick={() => setMenu(false)} className="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">Contact</Link>
+                    <Link to="/contact" onClick={() => setMenu(false)} className="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">Contact</Link>
                 </div>
 
             </div>
