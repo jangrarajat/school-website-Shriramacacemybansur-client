@@ -405,7 +405,7 @@ export default function Home() {
                                 </p>
                                 <div className=" rounded-full h-40 w-40  m-auto mb-4 border-[5px] border-yellow-500">
                                     <img
-                                        src="https://res.cloudinary.com/drrj8rl9n/image/upload/v1772193086/WhatsApp_Image_2026-02-27_at_4.19.43_PM_erymcv.jpg"
+                                        src="https://res.cloudinary.com/drrj8rl9n/image/upload/v1772280611/sir_py88go.jpg"
                                         alt=""
                                         className=" w-full rounded-full  h-full  mb-6"
 

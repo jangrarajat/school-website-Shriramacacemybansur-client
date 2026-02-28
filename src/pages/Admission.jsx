@@ -308,6 +308,28 @@ export default function Admission() {
 
                                     <div class="relative mb-12 md:flex items-center justify-between">
                                         <div class="md:w-5/12 mb-4 md:mb-0 text-right pr-8 hidden md:block">
+                                            <span class="text-6xl font-black text-blue-50">03</span>
+                                        </div>
+                                        <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full border-4 border-white shadow-md z-10 hidden md:flex">
+                                            <span class="text-white font-bold text-sm text-nowrap">STEP</span>
+                                        </div>
+                                        <div class="md:w-5/12 bg-gray-50 p-6 rounded-2xl shadow-sm border-l-4 border-blue-600 hover:shadow-md transition-shadow">
+                                            <h3 class="text-xl font-bold text-blue-900 mb-2 uppercase tracking-wide">Campus Visit & Interaction</h3>
+                                            <p class="text-gray-600 leading-snug text-sm">
+                                                Dear Parents,
+                                                We cordially invite you to visit our campus and witness our vibrant learning environment. Interact with our dedicated faculty, explore our facilities, and experience the excellence we offer.
+                                                We look forward to your gracious visit.                                            </p>
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+                                    <div class="relative mb-12 md:flex items-center justify-between flex-row-reverse">
+
+                                        <div class="md:w-5/12 mb-4 md:mb-0 text-right pr-8 hidden md:block">
                                             <span class="text-6xl font-black text-blue-50 opacity-100">01</span>
                                         </div>
                                         <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full border-4 border-white shadow-md z-10 hidden md:flex">
@@ -319,9 +341,16 @@ export default function Admission() {
                                                 Submit the Enquiry Form and visit the school admissions office. Our counsellor will get back to you to answer your questions and collect the required information.
                                             </p>
                                         </div>
+
+
+
+
+
+
+
                                     </div>
 
-                                    <div class="relative mb-12 md:flex items-center justify-between flex-row-reverse">
+                                    <div class="relative mb-12 md:flex items-center justify-between">
                                         <div class="md:w-5/12 mb-4 md:mb-0 text-left pl-8 hidden md:block">
                                             <span class="text-6xl font-black text-orange-50">02</span>
                                         </div>
@@ -334,27 +363,15 @@ export default function Admission() {
                                                 Visit the Admission Office to purchase the prospectus.
                                                 <span class="block mt-2 font-semibold text-gray-700">Required Documents:</span>
                                                 <ul class="list-disc list-inside text-xs mt-1 grid grid-cols-2 gap-1">
-                                                    <li>2 Passport Photos</li>
+                                                    <li>10 Passport Photos</li>
                                                     <li>Birth Certificate</li>
                                                     <li>Transfer Certificate</li>
-                                                    <li>Aadhaar/Voter ID</li>
-                                                    <li>SSSM ID Number</li>
-                                                </ul>
-                                            </p>
-                                        </div>
-                                    </div>
+                                                    <li>Residence Certificate</li>
+                                                    <li>Aadhaar Card( Child)</li>
+                                                    <li>Aadhaar Card( Parent's)</li>
+                                                    <li>Caste Certificate</li>
 
-                                    <div class="relative mb-12 md:flex items-center justify-between">
-                                        <div class="md:w-5/12 mb-4 md:mb-0 text-right pr-8 hidden md:block">
-                                            <span class="text-6xl font-black text-blue-50">03</span>
-                                        </div>
-                                        <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full border-4 border-white shadow-md z-10 hidden md:flex">
-                                            <span class="text-white font-bold text-sm text-nowrap">STEP</span>
-                                        </div>
-                                        <div class="md:w-5/12 bg-gray-50 p-6 rounded-2xl shadow-sm border-l-4 border-blue-600 hover:shadow-md transition-shadow">
-                                            <h3 class="text-xl font-bold text-blue-900 mb-2 uppercase tracking-wide">Campus Visit & Interaction</h3>
-                                            <p class="text-gray-600 leading-snug text-sm">
-                                                Parents are invited to visit the campus and schedule a meeting with the Principal to understand our culture. Fix a prior appointment through mail or telephone.
+                                                </ul>
                                             </p>
                                         </div>
                                     </div>
