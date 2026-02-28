@@ -134,7 +134,7 @@ export default function ContactPage() {
 
                                 <p className="mb-3 flex items-center gap-2">
 
-                                    <FaPhoneAlt/> <b>Mobile:</b> 7733902183
+                                    <FaPhoneAlt/> <b>Mobile:</b> 7733902183 , 8741802183 , 6350585875 , 7742617776
 
                                 </p>
 
@@ -146,7 +146,7 @@ export default function ContactPage() {
 
                                 <p className="mb-3 flex items-center  gap-2">
 
-                                    <FaMapMarkerAlt/> <b>Address:</b> Shubhash Chowk, Kotputli Raod, Bansur (Kotputli-Behror) - Raj.
+                                    <FaMapMarkerAlt/> <b>Address:</b> Shubhash Chowk, Kotputli Raod, Bansur (Kotputli-Behror) - Raj . 301402
 
                                 </p>
 
@@ -167,7 +167,7 @@ export default function ContactPage() {
 
                                 <iframe
                                     title="map"
-                                    src="https://maps.google.com/maps?q=Jaipur&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                    src="https://maps.app.goo.gl/G7Ap3XZuK3YNaitQ8"
                                     className="w-full h-80 rounded-lg"
                                 ></iframe>
 

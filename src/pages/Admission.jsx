@@ -2,7 +2,7 @@ import { useState } from "react"
 import Navbar from "../components/Navbar"
 
 export default function Admission() {
-
+    
     const [form, setForm] = useState({
 
         student_name: "",
@@ -70,122 +70,98 @@ export default function Admission() {
 
     return (
 
-      <>
-      <Navbar/>
-        <div className="admissionPage">
-            <h1>Admission Form</h1>
-
-            <p className="admissionSubtitle">
-
-                Apply for admission to our school.
-
-            </p>
-
-
-            <form
-                onSubmit={submit}
-                className="formBox"
-            >
-
-
-                <label>Student Name *</label>
-
-                <input
-                    name="student_name"
-                    value={form.student_name}
-                    onChange={handleChange}
-                    required
-                />
-
-
-
-                <label>Father Name *</label>
-
-                <input
-                    name="father_name"
-                    value={form.father_name}
-                    onChange={handleChange}
-                    required
-                />
-
-
-
-                <label>Class *</label>
-
-                <select
-                    name="class_name"
-                    value={form.class_name}
-                    onChange={handleChange}
-                    required
+        <>
+            <Navbar />
+            <div className="admissionPage">
+                <h1 className=" uppercase"> Inquary Form</h1>
+                <p className="admissionSubtitle">
+                    Apply for admission to our school.
+                </p>
+                <form
+                    onSubmit={submit}
+                    className="formBox"
                 >
+                    <label>Student Name *</label>
+                    <input
+                        name="student_name"
+                        value={form.student_name}
+                        onChange={handleChange}
+                        required
+                    />
+                    <label>Father Name *</label>
+                    <input
+                        name="father_name"
+                        value={form.father_name}
+                        onChange={handleChange}
+                        required
+                    />
+                    <label>Class *</label>
 
-                    <option value="">Select Class</option>
+                    <select
+                        name="class_name"
+                        value={form.class_name}
+                        onChange={handleChange}
+                        required
+                    >
+                        <option value="">Select Class</option>
+                        <option>Nursery</option>
+                        <option>LKG</option>
+                        <option>UKG</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option >4</option>
+                        <option >5</option>
+                        <option >6</option>
+                        <option >7</option>
+                        <option >8</option>
+                        <option >9</option>
+                        <option >10</option>
+                    </select>
+                    <label>Phone *</label>
+                    <input
+                        name="phone"
+                        value={form.phone}
+                        onChange={handleChange}
+                        required
+                    />
+                    <label>Address *</label>
+                    <input
+                        name="address"
+                        value={form.address}
+                        onChange={handleChange}
+                        required
+                    />
+                    <button
+                        type="submit"
+                        className="submitBtn"
+                    >
 
-                    <option>Nursery</option>
-                    <option>LKG</option>
-                    <option>UKG</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
+                        Submit Application
 
-                </select>
+                    </button>
 
+                    {/* SUCCESS MESSAGE */}
 
+                    {
 
-                <label>Phone *</label>
+                        msg && (
 
-                <input
-                    name="phone"
-                    value={form.phone}
-                    onChange={handleChange}
-                    required
-                />
+                            <p className="successMsg">
 
+                                {msg}
 
+                            </p>
 
-                <label>Address *</label>
+                        )
 
-                <input
-                    name="address"
-                    value={form.address}
-                    onChange={handleChange}
-                    required
-                />
-
-
-
-                <button
-                    type="submit"
-                    className="submitBtn"
-                >
-
-                    Submit Application
-
-                </button>
-
-
-
-                {/* SUCCESS MESSAGE */}
-
-                {
-
-                    msg && (
-
-                        <p className="successMsg">
-
-                            {msg}
-
-                        </p>
-
-                    )
-
-                }
+                    }
 
 
-            </form>
+                </form>
 
-        </div>
-      </>
+            </div>
+        </>
 
     )
 

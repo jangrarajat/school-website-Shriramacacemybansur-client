@@ -124,7 +124,7 @@ export default function Footer() {
                             </li>
                             <li className=" flex items-center gap-2">
                                 <FaMapMarkerAlt />  Shubhash Chowk, Kotputli Road,
-                                Bansur Rajasthan pin-code  301024
+                                Bansur Rajasthan pin-code  301402
                             </li>
                         </ul>
                   

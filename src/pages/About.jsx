@@ -63,7 +63,7 @@ export default function About() {
 
                             <p>
 
-                                Since our establishment in 2010,
+                                Since our establishment in 2019,
                                 our school has been committed to
                                 nurturing young minds and building
                                 a strong educational foundation.
