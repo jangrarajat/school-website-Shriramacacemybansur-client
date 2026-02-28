@@ -8,6 +8,7 @@ export default function TalentExam() {
     const [submitLoader, setSubmitLoader] = useState(false)
     const [activeTab, setActiveTab] = useState("register") 
     const [searchQuery, setSearchQuery] = useState("") 
+    const [searchType, setSearchType] = useState("mobile") 
     
     const [form, setForm] = useState({
         student_name: "",
@@ -31,19 +32,18 @@ export default function TalentExam() {
         setForm({ ...form, [e.target.name]: e.target.value })
     }
 
-    // --- Image Validation Logic (150KB Limit) ---
     const handlePhoto = (e) => {
         const file = e.target.files[0]
         if (file) {
-            const fileSizeKB = file.size / 1024; // Bytes to KB
+            const fileSizeKB = file.size / 1024;
             if (fileSizeKB > 150) {
                 setError("Image size must be less than 150KB! (Current: " + Math.round(fileSizeKB) + "KB)");
                 setPhoto(null);
                 setPreview("");
-                e.target.value = ""; // Input clear karne ke liye
+                e.target.value = "";
                 return;
             }
-            setError(""); // Agar size sahi hai to error hata do
+            setError("");
             setPhoto(file)
             setPreview(URL.createObjectURL(file))
         }
@@ -51,22 +51,34 @@ export default function TalentExam() {
 
     const findAdmitCard = async (e) => {
         e.preventDefault()
+        if (!searchQuery) {
+            setError(`Please enter ${searchType === 'mobile' ? 'Mobile Number' : 'Roll Number'}`)
+            return
+        }
         setSubmitLoader(true)
         setError("")
+        setStudent(null)
+
         try {
+            const payload = {}
+            payload[searchType] = searchQuery.trim()
+
             const res = await fetch("https://school-website-shriramacacemybansur.onrender.com/admin/findAdmitCard", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ mobile: searchQuery, roll: searchQuery })
+                body: JSON.stringify(payload)
             })
             const result = await res.json()
-            if (result.success && result.student) {
+            
+            // Yahan check hai: Agar success hai lekin student null hai
+            if (result.success && result.student !== null) {
                 setStudent(result.student)
             } else {
-                setError(result.message || "No student found!")
+                // User ko accurate message show hoga
+                setError("Student details not found! Please check your " + (searchType === 'mobile' ? 'Mobile Number' : 'Roll Number') + " correctly.");
             }
         } catch (err) {
-            setError("Search failed. Try again.")
+            setError("Search failed. Server error or Check connection.")
         } finally {
             setSubmitLoader(false)
         }
@@ -148,11 +160,29 @@ export default function TalentExam() {
                             <div className="p-6">
                                 <h1 className="text-2xl font-bold mb-4 text-center text-blue-900 uppercase">Search Admit Card</h1>
                                 <form onSubmit={findAdmitCard} className="flex flex-col gap-4">
-                                    <input className="border p-3 rounded border-gray-500 outline-none focus:border-blue-600" placeholder="Enter Roll No. or Mobile Number" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+                                    <div className="flex flex-col gap-1">
+                                        <label className="text-[10px] font-bold text-gray-500 uppercase ml-1">Search By</label>
+                                        <select 
+                                            className="border p-3 rounded border-gray-500 bg-gray-50 font-bold text-blue-900 outline-none focus:border-blue-600"
+                                            value={searchType || "mobile"}
+                                            onChange={(e) => setSearchType(e.target.value)}
+                                        >
+                                            <option value="mobile">Mobile Number</option>
+                                            <option value="roll">Roll Number</option>
+                                        </select>
+                                    </div>
+
+                                    <input 
+                                        className="border p-3 rounded border-gray-500 outline-none focus:border-blue-600" 
+                                        placeholder={`Enter ${searchType === 'mobile' ? 'Mobile Number' : 'Roll Number'}`} 
+                                        value={searchQuery || ""} 
+                                        onChange={(e) => setSearchQuery(e.target.value)} 
+                                    />
+                                    
                                     <button className="bg-blue-600 flex justify-center items-center text-white p-4 rounded font-bold hover:bg-blue-700 transition">
                                         {submitLoader ? <ButtonLoader /> : "Find & Print"}
                                     </button>
-                                    {error && <p className="text-red-600 text-center font-bold bg-red-50 p-2 rounded">{error}</p>}
+                                    {error && <p className="text-red-600 text-center font-bold bg-red-50 p-2 rounded border border-red-200">{error}</p>}
                                 </form>
                             </div>
                         ) : (
@@ -160,20 +190,20 @@ export default function TalentExam() {
                                 <h1 className="text-3xl font-bold mb-4 text-center text-blue-900 uppercase tracking-tight">talentine exam form 2026</h1>
                                 <form onSubmit={submit} className="flex flex-col gap-3 rounded-xl">
                                     <label className="text-start pl-1 uppercase">Student name</label>
-                                    <input className="border p-2 rounded border-gray-500" placeholder="Student Name" name="student_name" onChange={handleChange} />
+                                    <input className="border p-2 rounded border-gray-500" placeholder="Student Name" name="student_name" value={form.student_name || ""} onChange={handleChange} />
                                     <label className="text-start pl-1 uppercase font-bold text-gray-600">father name</label>
-                                    <input className="border p-2 rounded border-gray-500" placeholder="Father Name" name="father_name" onChange={handleChange} />
+                                    <input className="border p-2 rounded border-gray-500" placeholder="Father Name" name="father_name" value={form.father_name || ""} onChange={handleChange} />
                                     <label className="text-start pl-1 uppercase font-bold text-gray-600">mother name</label>
-                                    <input className="border p-2 rounded border-gray-500" placeholder="Mother Name" name="mother_name" onChange={handleChange} />
+                                    <input className="border p-2 rounded border-gray-500" placeholder="Mother Name" name="mother_name" value={form.mother_name || ""} onChange={handleChange} />
                                     
                                     <div className="grid grid-cols-2 gap-2">
                                         <div>
                                             <label className="text-start pl-1 uppercase font-bold text-gray-600">Date of birth</label>
-                                            <input type="date" className="w-full border p-2 rounded border-gray-500" name="dob" onChange={handleChange} />
+                                            <input type="date" className="w-full border p-2 rounded border-gray-500" name="dob" value={form.dob || ""} onChange={handleChange} />
                                         </div>
                                         <div>
                                             <label className="text-start pl-1 uppercase font-bold text-gray-600">Select class</label>
-                                            <select className="w-full border p-2 rounded border-gray-500" name="student_class" onChange={handleChange}>
+                                            <select className="w-full border p-2 rounded border-gray-500" name="student_class" value={form.student_class || ""} onChange={handleChange}>
                                                 <option value="">Select Group</option>
                                                 {["3", "4", "5", "6", "7", "8", "9"].map(c => <option key={c} value={c}>{c}</option>)}
                                             </select>
@@ -181,24 +211,23 @@ export default function TalentExam() {
                                     </div>
 
                                     <label className="text-start pl-1 uppercase font-bold text-gray-600">Mobile Number</label>
-                                    <input className="border p-2 rounded border-gray-500" placeholder="WhatsApp Number" name="mobile" onChange={handleChange} />
+                                    <input className="border p-2 rounded border-gray-500" placeholder="WhatsApp Number" name="mobile" value={form.mobile || ""} onChange={handleChange} />
                                     
                                     <label className="text-start pl-1 uppercase font-bold text-gray-600">Exam medium</label>
-                                    <select className="border p-2 rounded border-gray-500" name="medium" onChange={handleChange}>
+                                    <select className="border p-2 rounded border-gray-500" name="medium" value={form.medium || "Hindi"} onChange={handleChange}>
                                         <option value="Hindi">Hindi</option>
                                         <option value="English">English</option>
                                         <option value="Other">Other</option>
                                     </select>
 
                                     <label className="text-start pl-1 uppercase font-bold text-gray-600">Current school Name</label>
-                                    <input className="border p-2 rounded border-gray-500" placeholder="School Name" name="school" onChange={handleChange} />
+                                    <input className="border p-2 rounded border-gray-500" placeholder="School Name" name="school" value={form.school || ""} onChange={handleChange} />
                                     
                                     <label className="text-start pl-1 uppercase font-bold text-gray-600">address</label>
-                                    <input className="border p-2 rounded border-gray-500" placeholder="Full Address" name="address" onChange={handleChange} />
+                                    <input className="border p-2 rounded border-gray-500" placeholder="Full Address" name="address" value={form.address || ""} onChange={handleChange} />
                                     
-                                    {/* --- Image Instruction & Input --- */}
                                     <div className="mt-2">
-                                        <p className="text-[11px] font-bold text-red-600 uppercase mb-1">* Maximum Image Size: 150KB (Please upload a smaller file)</p>
+                                        <p className="text-[11px] font-bold text-red-600 uppercase mb-1">* Maximum Image Size: 150KB</p>
                                         <div className="flex flex-col cursor-pointer gap-1 justify-center items-center border-2 border-dashed p-3 rounded-lg border-gray-400 bg-gray-50 hover:bg-gray-100 transition">
                                             <label htmlFor="file" className="text-xs font-bold text-gray-600 flex flex-col items-center gap-2">
                                                 <FaImage className="text-2xl text-blue-500" />
@@ -217,10 +246,8 @@ export default function TalentExam() {
                         )}
                     </div>
                 ) : (
-                    /* ADMIT CARD (Design maintained from PDF source) */
                     <div className="flex flex-col items-center pb-10">
                         <div id="printArea" className="admit-card-box">
-                            {/* Header as per source [cite: 7, 8, 9] */}
                             <div className="flex items-center border-b-2 border-black pb-2 mb-3">
                                 <img src="https://res.cloudinary.com/drrj8rl9n/image/upload/v1772290472/logo_aq3gt6.png" className="w-20 h-20 border border-black mr-4 bg-white" alt="logo" />
                                 <div className="text-center flex-1">
@@ -231,7 +258,6 @@ export default function TalentExam() {
                                 </div>
                             </div>
 
-                            {/* Details as per source [cite: 1, 2, 3, 4, 5, 6] */}
                             <div className="flex justify-between mb-4 px-2">
                                 <div className="space-y-1 flex flex-col items-start font-bold text-gray-800 text-sm">
                                     <p>Roll Number: <span className="font-black text-xl ml-1">{student.roll}</span></p>
@@ -268,7 +294,6 @@ export default function TalentExam() {
                                 </tbody>
                             </table>
 
-                            {/* Official Instructions from Source  */}
                             <div className="mt-4 text-[11px] border-t-2 border-black pt-2 text-start">
                                 <p className="font-bold underline mb-1 italic uppercase">Instructions for Candidate</p>
                                 <ul className="list-decimal ml-5 font-semibold leading-tight space-y-0.5">
@@ -282,7 +307,6 @@ export default function TalentExam() {
                                     <li>Write roll number and details clearly on answer sheet. </li>
                                     <li>No student allowed to leave during the first hour. </li>
                                     <li>Follow all instructions from the invigilator. </li>
-                                    <li>In case of absence, re-examination will not be conducted without medical proof. </li>
                                 </ul>
                             </div>
 
