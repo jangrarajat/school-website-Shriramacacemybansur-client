@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-
 export default function GalleryPage() {
 
     const [selectedImage, setSelectedImage] = useState(null);
@@ -22,29 +21,50 @@ export default function GalleryPage() {
         "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772193080/WhatsApp_Image_2026-02-27_at_5.01.33_PM_2_l39y0c.jpg",
         "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772193079/WhatsApp_Image_2026-02-27_at_5.01.33_PM_1_p8luah.jpg",
         "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772193079/WhatsApp_Image_2026-02-27_at_5.01.38_PM_skk0oc.jpg",
-       
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272787/g20_tkznuk.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272783/g28_bl5tjz.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272780/g24_a90zzw.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272780/g27_ywzwln.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272779/g25_w51tja.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272779/g26_gw9ag0.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272774/g22_s8obfu.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272774/g23_unlbgl.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272772/g21_dh4i3r.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272770/g19_aly2df.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272766/g18_wcinvg.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272765/g14_b6z0yk.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272764/g16_nl27oe.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272763/g17_tn2hao.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272763/g15_li2lan.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272762/g13_qgemrw.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272755/g12_ugcrip.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272755/g9_q6b1nn.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272755/g11_ctick5.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272752/g10_xobk5w.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272752/g8_q1vpmr.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272748/g2_xjipql.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272747/g7_zh8wk1.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272745/g6_cbb8w0.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272743/g3_mnjkix.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272742/g4_gktwsf.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272742/g5_i4kw3l.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772272741/g1_iutyeh.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772271331/WhatsApp_Image_2026-02-28_at_3.02.26_PM_cexcci.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772271330/WhatsApp_Image_2026-02-28_at_2.55.48_PM_rpdnpb.jpg",
+        "https://res.cloudinary.com/drrj8rl9n/image/upload/v1772271329/WhatsApp_Image_2026-02-28_at_2.56.16_PM_sfehoo.jpg",
+
+
     ];
 
 
-    /* School Videos */
 
-    const videos = [
-
-        "/videos/video1.mp4",
-        "/videos/video2.mp4"
-
-    ];
 
 
     return (
         <>
-  <Navbar/>
+            <Navbar />
             <div className="bg-gray-100 min-h-screen py-10 px-4">
-
-
                 <div className="max-w-7xl mx-auto">
-
-
                     {/* Title */}
 
                     <h1 className="text-4xl font-bold text-center text-blue-700 mb-10">
@@ -86,46 +106,6 @@ export default function GalleryPage() {
 
 
                     </div>
-
-
-
-                    {/* Videos Section */}
-
-                    {/* <h2 className="text-2xl font-semibold mt-12 mb-6">
-
-                        School Videos
-
-                    </h2> */}
-
-
-
-                    {/* <div className="grid md:grid-cols-2 gap-8">
-
-
-                        {videos.map((video, index) => (
-
-                            <div
-                                key={index}
-                                className="bg-white p-3 rounded-xl shadow-lg"
-                            >
-
-                                <video
-                                    controls
-                                    className="w-full rounded-lg"
-                                >
-
-                                    <source src={video} type="video/mp4" />
-
-                                </video>
-
-                            </div>
-
-                        ))}
-
-
-                    </div> */}
-
-
 
                     {/* Image Modal */}
 

@@ -34,7 +34,7 @@ export default function ContactPage() {
     return (
 
         <>
-        <Navbar/>
+            <Navbar />
             <div className="bg-gray-100 min-h-screen py-10 px-4">
 
                 <div className="max-w-7xl mx-auto">
@@ -71,7 +71,7 @@ export default function ContactPage() {
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
- className="w-full border p-3 rounded-lg focus:outline-none focus:border-blue-500 order  border-gray-500"                                />
+                                    className="w-full border p-3 rounded-lg focus:outline-none focus:border-blue-500 order  border-gray-500" />
 
 
                                 <input
@@ -81,7 +81,7 @@ export default function ContactPage() {
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
- className="w-full border p-3 rounded-lg focus:outline-none focus:border-blue-500 order  border-gray-500"                                />
+                                    className="w-full border p-3 rounded-lg focus:outline-none focus:border-blue-500 order  border-gray-500" />
 
 
                                 <input
@@ -101,7 +101,7 @@ export default function ContactPage() {
                                     value={formData.message}
                                     onChange={handleChange}
                                     required
- className="w-full border p-3 rounded-lg focus:outline-none focus:border-blue-500 order  border-gray-500"                                />
+                                    className="w-full border p-3 rounded-lg focus:outline-none focus:border-blue-500 order  border-gray-500" />
 
 
                                 <button
@@ -134,19 +134,19 @@ export default function ContactPage() {
 
                                 <p className="mb-3 flex items-center gap-2">
 
-                                    <FaPhoneAlt/> <b>Mobile:</b> 7733902183 , 8741802183 , 6350585875 , 7742617776
+                                    <FaPhoneAlt /> <b>Mobile:</b> 7733902183 , 8741802183 , 6350585875 , 7742617776
 
                                 </p>
 
                                 <p className="mb-3 flex items-center  gap-2">
 
-                                <FaEnvelope/><b>Email:</b> Shriramacacemybansur@gmail.com
+                                    <FaEnvelope /><b>Email:</b> Shriramacacemybansur@gmail.com
 
                                 </p>
 
                                 <p className="mb-3 flex items-center  gap-2">
 
-                                    <FaMapMarkerAlt/> <b>Address:</b> Shubhash Chowk, Kotputli Raod, Bansur (Kotputli-Behror) - Raj . 301402
+                                    <FaMapMarkerAlt /> <b>Address:</b> Shubhash Chowk, Kotputli Raod, Bansur (Kotputli-Behror) - Raj . 301402
 
                                 </p>
 
@@ -167,9 +167,11 @@ export default function ContactPage() {
 
                                 <iframe
                                     title="map"
-                                    src="https://maps.app.goo.gl/G7Ap3XZuK3YNaitQ8"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.861113061483!2d76.3312386754668!3d27.687931276192864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39725debf2bbbc63%3A0x857151dcddd92ca1!2zU2hyaXJhbSBBY2FkZW15!5e0!3m2!1sen!2sin!4v1710000000000"
                                     className="w-full h-80 rounded-lg"
-                                ></iframe>
+                                    allowfullscreen=""
+                                    loading="lazy">
+                                </iframe>
 
 
                             </div>

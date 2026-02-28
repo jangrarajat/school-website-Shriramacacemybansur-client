@@ -8,6 +8,11 @@ import img5 from "../assets/school5.jpeg";
 import img6 from "../assets/school6.jpeg";
 import img7 from "../assets/school7.jpeg";
 import img8 from "../assets/school8.jpeg";
+import slide1 from "../assets/slide1.jpeg"
+import slide2 from "../assets/slide2.jpeg"
+import slide3 from "../assets/slide3.jpeg"
+import slide4 from "../assets/slide4.jpeg"
+
 import { FaEnvelope, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaPhoneAlt, FaYoutube } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
@@ -18,6 +23,9 @@ export default function Home() {
     const images = [
         img1, img2, img3, img4, img5, img6, img7, img8
     ];
+    const slideImage = [
+        slide1 , slide2 , slide3 , slide4
+    ]
 
     const [index, setIndex] = useState(0);
 
@@ -28,7 +36,7 @@ export default function Home() {
 
         const timer = setInterval(() => {
 
-            setIndex((prev) => (prev + 1) % images.length)
+            setIndex((prev) => (prev + 1) % slideImage.length)
 
         }, 5000)
 
@@ -42,7 +50,7 @@ export default function Home() {
 
     const nextSlide = () => {
 
-        setIndex((index + 1) % images.length)
+        setIndex((index + 1) % slideImage.length)
 
     }
 
@@ -51,7 +59,7 @@ export default function Home() {
 
     const prevSlide = () => {
 
-        setIndex((index - 1 + images.length) % images.length)
+        setIndex((index - 1 + images.length) % slideImage.length)
 
     }
 
@@ -69,7 +77,7 @@ export default function Home() {
                     {/* Image Container with Fixed Height */}
                     <div className="relative w-full h-[60vh] md:h-[85vh] overflow-hidden">
                         <img
-                            src={images[index]}
+                            src={slideImage[index]}
                             alt="School Slide"
                             className="w-full h-full object-cover transition-transform duration-700 scale-105 group-hover:scale-100"
                         />
@@ -132,7 +140,7 @@ export default function Home() {
 
                     {/* Elegant Dots Navigation */}
                     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
-                        {images.map((_, i) => (
+                        {slideImage.map((_, i) => (
                             <button
                                 key={i}
                                 onClick={() => setIndex(i)}
@@ -356,7 +364,7 @@ export default function Home() {
 
 
 
-   {/* Teacher 3 */}
+                        {/* Teacher 3 */}
 
                         <div className=" shadow-black/25  rounded-3xl shadow-lg hover:scale-105 duration-300   ">
 
@@ -415,7 +423,7 @@ export default function Home() {
                             </div>
 
                         </div>
-           
+
 
 
                         <div className=" shadow-black/25  rounded-3xl shadow-lg hover:scale-105 duration-300  ">
