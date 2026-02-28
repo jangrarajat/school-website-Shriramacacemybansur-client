@@ -222,7 +222,7 @@ export default function TalentExam() {
                         <div id="printArea" className="admit-card-box">
                             {/* Header as per source [cite: 7, 8, 9] */}
                             <div className="flex items-center border-b-2 border-black pb-2 mb-3">
-                                <img src={logo} className="w-20 h-20 border border-black mr-4 bg-white" alt="logo" />
+                                <img src="https://res.cloudinary.com/drrj8rl9n/image/upload/v1772290472/logo_aq3gt6.png" className="w-20 h-20 border border-black mr-4 bg-white" alt="logo" />
                                 <div className="text-center flex-1">
                                     <p className="text-3xl font-black uppercase tracking-tight">The Shriram foundation school</p>
                                     <p className="text-[10px] font-bold">Subhash Chowk, Kotputli Road, Bansur (Kotputli-Behror) - Raj. 7733902183</p>
