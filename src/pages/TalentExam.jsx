@@ -303,7 +303,7 @@ export default function TalentExam() {
 
                 {/* --- Step 3: ADMIT CARD TEMPLATE VIEW --- */}
                 {student && (
-                    <div className="flex flex-col text-2xl items-center pb-10">
+                    <div className="flex flex-col  items-center pb-10">
                         <div id="printArea" className="admit-card-box">
                             <div className="flex items-center border-b-2 border-black pb-2 mb-3">
                                 <img src="https://res.cloudinary.com/drrj8rl9n/image/upload/v1772290472/logo_aq3gt6.png" className="w-20 h-20 border border-black mr-4 bg-white" alt="logo" />
