@@ -303,14 +303,14 @@ export default function TalentExam() {
 
                 {/* --- Step 3: ADMIT CARD TEMPLATE VIEW --- */}
                 {student && (
-                    <div className="flex flex-col  items-center pb-10">
+                    <div className="flex flex-col  items-center ">
                         <div id="printArea" className="admit-card-box">
                             <div className="flex items-center border-b-2 border-black pb-2 mb-3">
                                 <img src="https://res.cloudinary.com/drrj8rl9n/image/upload/v1772290472/logo_aq3gt6.png" className="w-20 h-20 border border-black mr-4 bg-white" alt="logo" />
                                 <div className="text-center flex-1">
                                     <p className="text-3xl font-black uppercase tracking-tight">The Shriram foundation school</p>
                                     <p className="text-[10px] font-bold">Subhash Chowk, Kotputli Road, Bansur (Kotputli-Behror) - Raj. 7733902183</p>
-                                    <p className="text-black text-3xl px-3 py-1 inline-block mt-1 font-extrabold rounded uppercase italic border-2 border-black">TALENTine EXAM 2026</p>
+                                    <p className="text-black text-2xl px-3 py-1 inline-block mt-1 font-extrabold rounded uppercase italic border-2 border-black">TALENTine EXAM 2026</p>
                                     <p className="font-bold  mt-1">ADMIT CARD</p>
                                 </div>
                             </div>
@@ -326,7 +326,7 @@ export default function TalentExam() {
                                     <p>Mobile NO : {student.mobile} </p>
                                     <p>Exam Medium: {student.medium}</p>
                                 </div>
-                                <div className="w-44 h-52 border-2 border-black p-1 bg-white">
+                                <div className="w-44 h-44 border-2 border-black p-1 bg-white">
                                     <img src={student.photoUrl || preview} className="w-full h-full object-cover" alt="student" />
                                 </div>
                             </div>
@@ -358,24 +358,24 @@ export default function TalentExam() {
 
                             <div className="mt-4 text-[11px] border-t-2 border-black pt-2 text-start">
                                 <p className="font-bold underline mb-1 italic uppercase">Instructions for Candidate</p>
-                                <ul className="list-decimal ml-5 font-semibold leading-tight space-y-0.5">
+                                <ul className="list-decimal ml-5 font-semibold leading-tight space-y-1 ">
                                     <li >
                                         <p className="mb-1"> Students must report at least 90 minutes before exam starts. (Reporting Time: 07:30 AM)</p>
                                          <p> विद्यार्थियों को परीक्षा शुरू होने से कम से कम 90 मिनट पहले पहुंचना अनिवार्य है। (रिपोर्टिंग समय: सुबह 07:30 बजे)</p>
                                     </li>
-                                    <br />
+                                   
                                     <li>
                                         Compulsory to carry Admit Card and Aadhaar Card (or valid Photo ID).
                                         <br />प्रवेश पत्र (Admit Card) और आधार कार्ड (या कोई वैध फोटो आईडी) लाना अनिवार्य है।
-                                    </li> <br />
-                                    <li>Only blue or black ball pen is allowed. Use of pencil is strictly prohibited. <br />केवल नीले या काले बॉल पेन की अनुमति है। पेंसिल का उपयोग सख्त वर्जित है।</li><br />
-                                    <li>Mobile phones, smart watches, calculators are strictly prohibited. <br />मोबाइल फोन, स्मार्ट वॉच, कैलकुलेटर आदि ले जाना सख्त मना है।</li><br />
-                                    <li>Maintain silence, discipline, and good behavior. <br />शांति, अनुशासन और अच्छा व्यवहार बनाए रखें। </li><br />
-                                    <li>Any form of cheating leads to immediate cancellation. <br />किसी भी प्रकार की नकल करने पर परीक्षा तुरंत रद्द कर दी जाएगी।</li><br />
-                                    <li>Students are not allowed to borrow stationery. <br />विद्यार्थियों को स्टेशनरी (पेन आदि) उधार लेने की अनुमति नहीं है।</li><br />
-                                    <li>Write roll number and details clearly on answer sheet. <br />उत्तर पुस्तिका (Answer Sheet) पर अपना रोल नंबर और विवरण स्पष्ट रूप से लिखें। </li><br />
-                                    <li>No student allowed to leave during the first hour. <br />परीक्षा के पहले एक घंटे के दौरान किसी भी छात्र को बाहर जाने की अनुमति नहीं दी जाएगी।</li><br />
-                                    <li>Follow all instructions from the invigilator. <br />कक्ष निरीक्षक (Invigilator) द्वारा दिए गए सभी निर्देशों का पालन करें।</li><br />
+                                    </li> 
+                                    <li>Only blue or black ball pen is allowed. Use of pencil is strictly prohibited. <br />केवल नीले या काले बॉल पेन की अनुमति है। पेंसिल का उपयोग सख्त वर्जित है।</li>
+                                    <li>Mobile phones, smart watches, calculators are strictly prohibited. <br />मोबाइल फोन, स्मार्ट वॉच, कैलकुलेटर आदि ले जाना सख्त मना है।</li>
+                                    <li>Maintain silence, discipline, and good behavior. <br />शांति, अनुशासन और अच्छा व्यवहार बनाए रखें। </li>
+                                    <li>Any form of cheating leads to immediate cancellation. <br />किसी भी प्रकार की नकल करने पर परीक्षा तुरंत रद्द कर दी जाएगी।</li>
+                                    <li>Students are not allowed to borrow stationery. <br />विद्यार्थियों को स्टेशनरी (पेन आदि) उधार लेने की अनुमति नहीं है।</li>
+                                    <li>Write roll number and details clearly on answer sheet. <br />उत्तर पुस्तिका (Answer Sheet) पर अपना रोल नंबर और विवरण स्पष्ट रूप से लिखें। </li>
+                                    <li>No student allowed to leave during the first hour. <br />परीक्षा के पहले एक घंटे के दौरान किसी भी छात्र को बाहर जाने की अनुमति नहीं दी जाएगी।</li>
+                                    <li>Follow all instructions from the invigilator. <br />कक्ष निरीक्षक (Invigilator) द्वारा दिए गए सभी निर्देशों का पालन करें।</li>
                                 </ul>
                             </div>
 
