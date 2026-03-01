@@ -203,7 +203,7 @@ export default function Home() {
                             <div className=" font-sans ">
 
                                 <p>
-                                    The Shriram Foundation School
+                                   
                                     The Shriram Foundation School is a well-known and trusted school that provides quality education from Pre-Primary to Class 10th. We focus on building a strong academic foundation while also teaching discipline, good values, and confidence.
                                     Our aim is not only to help students score good marks but also to help them grow into responsible, confident, and successful individuals.
                                     We provide special preparation for important entrance exams like Navodaya Vidyalaya, Sainik School, Military School, and RIMC. With the support of experienced teachers, regular tests, proper study material, and personal guidance, we help students achieve their goals.
@@ -214,7 +214,7 @@ export default function Home() {
                                     <li> ✔ Classes from Pre-Primary to 10th</li>
                                     <li> ✔ Special Foundation Classes</li>
                                     <li> ✔ Continuous Performance Monitoring</li>
-                                    <li>✔ Residential Facility for Boys & Girls</li>
+                                     
                                     <li> ✔ Residential Facility for Boys & Girls</li>
                                     <li>✔ Safe, Disciplined & Student-Friendly Campus</li>
                                     <li>✔ Focus on Academic Excellence & Character Development</li>
@@ -385,7 +385,7 @@ export default function Home() {
                                 </div>
                                 <div className="border border-b-gray-500"></div>
                                 <p className=" font-sans text-gray-600 text-sm lowercase ">
-                                    Welcome to The Shriram Foundation School. We provide quality education in a safe environment, helping students build knowledge, discipline, confidence, and values to become responsible and successful individuals in life.
+                                   <span className=" uppercase"> W</span>elcome to The Shriram Foundation School. We provide quality education in a safe environment, helping students build knowledge, discipline, confidence, and values to become responsible and successful individuals in life.
                                 </p>
                             </div>
                         </div>
@@ -415,7 +415,7 @@ export default function Home() {
 
                                 <p className=" font-sans text-gray-600 text-sm   lowercase">
 
-                                    At The Shriram Foundation School, we guide students with strong academics, discipline, and values, including preparation for Navodaya, Sainik, Military School, and RIMC, helping students achieve success through dedication and confidence.
+                                  <span className=" uppercase"> a</span>t The Shriram Foundation School, we guide students with strong academics, discipline, and values, including preparation for Navodaya, Sainik, Military School, and RIMC, helping students achieve success through dedication and confidence.
                                 </p>
 
 
@@ -442,7 +442,7 @@ export default function Home() {
                                 </div>
                                 <div className="border border-b-gray-500"></div>
                                 <p className=" font-sans text-sm text-gray-600  lowercase">
-                                    Pre-Primary Wing (LKG to Class 3):
+                                  <span className=" uppercase"> p</span>re-Primary Wing (LKG to Class 3):
                                     <br />  At The Shriram Foundation School, our Pre-Primary Wing builds strong basic skills through fun learning in a safe environment, helping children grow with confidence, discipline, and good values.
                                 </p>
                             </div>

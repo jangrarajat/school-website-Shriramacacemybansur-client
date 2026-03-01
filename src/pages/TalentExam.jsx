@@ -6,10 +6,10 @@ import { FaImage, FaSearch, FaUserPlus } from "react-icons/fa"
 
 export default function TalentExam() {
     const [submitLoader, setSubmitLoader] = useState(false)
-    const [activeTab, setActiveTab] = useState("register") 
-    const [searchQuery, setSearchQuery] = useState("") 
-    const [searchType, setSearchType] = useState("mobile") 
-    
+    const [activeTab, setActiveTab] = useState("register")
+    const [searchQuery, setSearchQuery] = useState("")
+    const [searchType, setSearchType] = useState("mobile")
+
     const [form, setForm] = useState({
         student_name: "",
         father_name: "",
@@ -69,7 +69,7 @@ export default function TalentExam() {
                 body: JSON.stringify(payload)
             })
             const result = await res.json()
-            
+
             // Yahan check hai: Agar success hai lekin student null hai
             if (result.success && result.student !== null) {
                 setStudent(result.student)
@@ -109,8 +109,10 @@ export default function TalentExam() {
             const res = await fetch("https://school-website-shriramacacemybansur.onrender.com/exam/register", {
                 method: "POST",
                 body: data
-            })
-            const result = await res.json()
+            }) 
+            const result = await res.json(
+            )
+            console.log(result)
             if (result.success) {
                 setStudent(result.student)
             } else {
@@ -118,6 +120,7 @@ export default function TalentExam() {
             }
         } catch (error) {
             setError("Server error!")
+            console.log(error)
         } finally {
             setSubmitLoader(false)
         }
@@ -144,10 +147,10 @@ export default function TalentExam() {
                 {!student ? (
                     <div className="max-w-xl mx-auto border rounded shadow bg-white overflow-hidden">
                         <div className="flex mb-4 bg-gray-100 p-1 rounded-t">
-                            <button onClick={() => {setActiveTab("register"); setError("")}} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "register" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
+                            <button onClick={() => { setActiveTab("register"); setError("") }} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "register" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
                                 <FaUserPlus /> Register
                             </button>
-                            <button onClick={() => {setActiveTab("find"); setError("")}} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "find" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
+                            <button onClick={() => { setActiveTab("find"); setError("") }} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "find" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
                                 <FaSearch /> Dawnlaod Admit Card
                             </button>
                         </div>
@@ -162,7 +165,7 @@ export default function TalentExam() {
                                 <form onSubmit={findAdmitCard} className="flex flex-col gap-4">
                                     <div className="flex flex-col gap-1">
                                         <label className="text-[10px] font-bold text-gray-500 uppercase ml-1">Search By</label>
-                                        <select 
+                                        <select
                                             className="border p-3 rounded border-gray-500 bg-gray-50 font-bold text-blue-900 outline-none focus:border-blue-600"
                                             value={searchType || "mobile"}
                                             onChange={(e) => setSearchType(e.target.value)}
@@ -172,13 +175,13 @@ export default function TalentExam() {
                                         </select>
                                     </div>
 
-                                    <input 
-                                        className="border p-3 rounded border-gray-500 outline-none focus:border-blue-600" 
-                                        placeholder={`Enter ${searchType === 'mobile' ? 'Mobile Number' : 'Roll Number'}`} 
-                                        value={searchQuery || ""} 
-                                        onChange={(e) => setSearchQuery(e.target.value)} 
+                                    <input
+                                        className="border p-3 rounded border-gray-500 outline-none focus:border-blue-600"
+                                        placeholder={`Enter ${searchType === 'mobile' ? 'Mobile Number' : 'Roll Number'}`}
+                                        value={searchQuery || ""}
+                                        onChange={(e) => setSearchQuery(e.target.value)}
                                     />
-                                    
+
                                     <button className="bg-blue-600 flex justify-center items-center text-white p-4 rounded font-bold hover:bg-blue-700 transition">
                                         {submitLoader ? <ButtonLoader /> : "Find & Print"}
                                     </button>
@@ -189,13 +192,13 @@ export default function TalentExam() {
                             <div className="p-4">
                                 <h1 className="text-3xl font-bold mb-4 text-center text-blue-900 uppercase tracking-tight">talentine exam form 2026</h1>
                                 <form onSubmit={submit} className="flex flex-col gap-3 rounded-xl">
-                                    <label className="text-start pl-1 uppercase">Student name</label>
+                                    <label className="text-start pl-1 uppercase font-bold text-gray-600">Student's name</label>
                                     <input className="border p-2 rounded border-gray-500" placeholder="Student Name" name="student_name" value={form.student_name || ""} onChange={handleChange} />
-                                    <label className="text-start pl-1 uppercase font-bold text-gray-600">father name</label>
+                                    <label className="text-start pl-1 uppercase font-bold text-gray-600">father's name</label>
                                     <input className="border p-2 rounded border-gray-500" placeholder="Father Name" name="father_name" value={form.father_name || ""} onChange={handleChange} />
-                                    <label className="text-start pl-1 uppercase font-bold text-gray-600">mother name</label>
+                                    <label className="text-start pl-1 uppercase font-bold text-gray-600">mother's name</label>
                                     <input className="border p-2 rounded border-gray-500" placeholder="Mother Name" name="mother_name" value={form.mother_name || ""} onChange={handleChange} />
-                                    
+
                                     <div className="grid grid-cols-2 gap-2">
                                         <div>
                                             <label className="text-start pl-1 uppercase font-bold text-gray-600">Date of birth</label>
@@ -205,14 +208,14 @@ export default function TalentExam() {
                                             <label className="text-start pl-1 uppercase font-bold text-gray-600">Select class</label>
                                             <select className="w-full border p-2 rounded border-gray-500" name="student_class" value={form.student_class || ""} onChange={handleChange}>
                                                 <option value="">Select Group</option>
-                                                {["3", "4", "5", "6", "7", "8", "9"].map(c => <option key={c} value={c}>{c}</option>)}
+                                                {["3", "4", "5", "6", "7", "8", "9", "10"].map(c => <option key={c} value={c}>{c}</option>)}
                                             </select>
                                         </div>
                                     </div>
 
                                     <label className="text-start pl-1 uppercase font-bold text-gray-600">Mobile Number</label>
                                     <input className="border p-2 rounded border-gray-500" placeholder="WhatsApp Number" name="mobile" value={form.mobile || ""} onChange={handleChange} />
-                                    
+
                                     <label className="text-start pl-1 uppercase font-bold text-gray-600">Exam medium</label>
                                     <select className="border p-2 rounded border-gray-500" name="medium" value={form.medium || "Hindi"} onChange={handleChange}>
                                         <option value="Hindi">Hindi</option>
@@ -222,10 +225,10 @@ export default function TalentExam() {
 
                                     <label className="text-start pl-1 uppercase font-bold text-gray-600">Current school Name</label>
                                     <input className="border p-2 rounded border-gray-500" placeholder="School Name" name="school" value={form.school || ""} onChange={handleChange} />
-                                    
+
                                     <label className="text-start pl-1 uppercase font-bold text-gray-600">address</label>
                                     <input className="border p-2 rounded border-gray-500" placeholder="Full Address" name="address" value={form.address || ""} onChange={handleChange} />
-                                    
+
                                     <div className="mt-2">
                                         <p className="text-[11px] font-bold text-red-600 uppercase mb-1">* Maximum Image Size: 150KB</p>
                                         <div className="flex flex-col cursor-pointer gap-1 justify-center items-center border-2 border-dashed p-3 rounded-lg border-gray-400 bg-gray-50 hover:bg-gray-100 transition">
@@ -246,7 +249,7 @@ export default function TalentExam() {
                         )}
                     </div>
                 ) : (
-                    <div className="flex flex-col items-center pb-10">
+                    <div className="flex flex-col text-3xl items-center pb-10">
                         <div id="printArea" className="admit-card-box">
                             <div className="flex items-center border-b-2 border-black pb-2 mb-3">
                                 <img src="https://res.cloudinary.com/drrj8rl9n/image/upload/v1772290472/logo_aq3gt6.png" className="w-20 h-20 border border-black mr-4 bg-white" alt="logo" />
@@ -254,20 +257,22 @@ export default function TalentExam() {
                                     <p className="text-3xl font-black uppercase tracking-tight">The Shriram foundation school</p>
                                     <p className="text-[10px] font-bold">Subhash Chowk, Kotputli Road, Bansur (Kotputli-Behror) - Raj. 7733902183</p>
                                     <p className="text-black text-3xl px-3 py-1 inline-block mt-1 font-extrabold rounded uppercase italic border-2 border-black">TALENTine EXAM 2026</p>
-                                    <p className="font-bold border-t border-black mt-1">ADMIT CARD</p>
+                                    <p className="font-bold  mt-1">ADMIT CARD</p>
                                 </div>
                             </div>
 
                             <div className="flex justify-between mb-4 px-2">
                                 <div className="space-y-1 flex flex-col items-start font-bold text-gray-800 text-sm">
-                                    <p>Roll Number: <span className="font-black text-xl ml-1">{student.roll}</span></p>
+                                    <p>Roll Number: <span className="font-black  ml-1">{student.roll}</span></p>
                                     <p>Student Name: <span className="uppercase">{student.student_name}</span></p>
                                     <p>Father Name: <span className="uppercase">{student.father_name}</span></p>
-                                    <p>Class Group: {student.class}th Grade</p>
+                                    <p>Class : {student.class} </p>
+                                    <p>Group: {student.rollWithGroup}</p>
                                     <p>DOB: {new Date(student.dob).toLocaleDateString('en-GB')}</p>
+                                    <p>Mobile NO : {student.mobile} </p>
                                     <p>Exam Medium: {student.medium}</p>
                                 </div>
-                                <div className="w-36 h-44 border-2 border-black p-1 bg-white">
+                                <div className="w-44 h-52 border-2 border-black p-1 bg-white">
                                     <img src={student.photoUrl || preview} className="w-full h-full object-cover" alt="student" />
                                 </div>
                             </div>
@@ -288,7 +293,7 @@ export default function TalentExam() {
                                 </thead>
                                 <tbody>
                                     <tr className="bg-gray-50 font-bold">
-                                        <td className="p-2 border border-black">Reporting Time: 08:00 AM </td>
+                                        <td className="p-2 border border-black">Reporting Time: 07:30 AM </td>
                                         <td className="p-2 border border-black">Duration: 2.30 Hrs</td>
                                     </tr>
                                 </tbody>
@@ -297,22 +302,31 @@ export default function TalentExam() {
                             <div className="mt-4 text-[11px] border-t-2 border-black pt-2 text-start">
                                 <p className="font-bold underline mb-1 italic uppercase">Instructions for Candidate</p>
                                 <ul className="list-decimal ml-5 font-semibold leading-tight space-y-0.5">
-                                    <li>Students must report at least 90 minutes before exam starts. (Reporting Time: 8:00 AM) </li>
-                                    <li>Compulsory to carry Admit Card and Aadhaar Card (or valid Photo ID). </li>
-                                    <li>Only blue or black ball pen is allowed. Use of pencil is strictly prohibited. </li>
-                                    <li>Mobile phones, smart watches, calculators are strictly prohibited. </li>
-                                    <li>Maintain silence, discipline, and good behavior. </li>
-                                    <li>Any form of cheating leads to immediate cancellation. </li>
-                                    <li>Students are not allowed to borrow stationery. </li>
-                                    <li>Write roll number and details clearly on answer sheet. </li>
-                                    <li>No student allowed to leave during the first hour. </li>
-                                    <li>Follow all instructions from the invigilator. </li>
+                                    <li>
+                                        Students must report at least 90 minutes before exam starts. (Reporting Time: 07:30 AM)
+                                       <br /> <br /> विद्यार्थियों को परीक्षा शुरू होने से कम से कम 90 मिनट पहले पहुंचना अनिवार्य है। (रिपोर्टिंग समय: सुबह 07:30 बजे)
+                                    </li>
+                                    <br />
+                                    <li>
+                                        Compulsory to carry Admit Card and Aadhaar Card (or valid Photo ID).
+                                        <br />प्रवेश पत्र (Admit Card) और आधार कार्ड (या कोई वैध फोटो आईडी) लाना अनिवार्य है।
+                                    </li> <br />
+                                    <li>Only blue or black ball pen is allowed. Use of pencil is strictly prohibited. <br />केवल नीले या काले बॉल पेन की अनुमति है। पेंसिल का उपयोग सख्त वर्जित है।</li><br />
+                                    <li>Mobile phones, smart watches, calculators are strictly prohibited. <br />मोबाइल फोन, स्मार्ट वॉच, कैलकुलेटर आदि ले जाना सख्त मना है।</li><br />
+                                    <li>Maintain silence, discipline, and good behavior. <br />शांति, अनुशासन और अच्छा व्यवहार बनाए रखें। </li><br />
+                                    <li>Any form of cheating leads to immediate cancellation. <br />किसी भी प्रकार की नकल करने पर परीक्षा तुरंत रद्द कर दी जाएगी।</li><br />
+                                    <li>Students are not allowed to borrow stationery. <br />विद्यार्थियों को स्टेशनरी (पेन आदि) उधार लेने की अनुमति नहीं है।</li><br />
+                                    <li>Write roll number and details clearly on answer sheet. <br />उत्तर पुस्तिका (Answer Sheet) पर अपना रोल नंबर और विवरण स्पष्ट रूप से लिखें। </li><br />
+                                    <li>No student allowed to leave during the first hour. <br />परीक्षा के पहले एक घंटे के दौरान किसी भी छात्र को बाहर जाने की अनुमति नहीं दी जाएगी।</li><br />
+                                    <li>Follow all instructions from the invigilator. <br />कक्ष निरीक्षक (Invigilator) द्वारा दिए गए सभी निर्देशों का पालन करें।</li><br />
                                 </ul>
                             </div>
 
                             <div className="flex justify-between mt-8 px-8">
-                                <div className="text-center w-40 font-bold pt-1 border-t border-black text-xs uppercase">
-                                    Candidate's Sign 
+                                <div className="text-center w-40 font-bold pt-1  text-xs uppercase">
+
+                                    <div className=" pt-11">Candidate's Sign </div>
+
                                 </div>
                                 <div className="text-center w-48 font-bold text-xs uppercase">
                                     <img src="https://res.cloudinary.com/drrj8rl9n/image/upload/v1772266342/WhatsApp_Image_2026-02-28_at_1.34.10_PM-fotor-bg-remover-20260228134154_nzdafv.png" className="w-32 mx-auto -mb-4" alt="sign" />
@@ -322,8 +336,8 @@ export default function TalentExam() {
                         </div>
 
                         <div className="flex gap-4 mt-8 no-print">
-                            <button onClick={() => {setStudent(null); setError("")}} className="bg-gray-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition">GO BACK</button>
-                            <button onClick={() => window.print()} className="bg-green-700 text-white px-10 py-3 rounded-full font-bold shadow-xl hover:scale-105 transition">PRINT ADMIT CARD</button>
+                            <button onClick={() => { setStudent(null); setError("") }} className="bg-gray-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition">GO BACK</button>
+                            <button onClick={() => window.print()} onTouchStart={() => window.print()} className="bg-green-700 text-white px-10 py-3 rounded-full font-bold shadow-xl hover:scale-105 transition">PRINT ADMIT CARD</button>
                         </div>
                     </div>
                 )}

@@ -76,7 +76,7 @@ export default function Footer() {
                         <p>
 
                             Excellence in Education - Building bright
-                            futures for students since 2010.
+                            futures for students since 2019.
 
                         </p>
 
@@ -120,7 +120,7 @@ export default function Footer() {
                                 <FaPhoneAlt /> 7733902183
                             </li>
                             <li className=" flex items-center gap-2">
-                                <FaEnvelope /> Shriramacacemybansur@gmail.com
+                                <FaEnvelope /> shriramacademybansur@gmail.com
                             </li>
                             <li className=" flex items-center gap-2">
                                 <FaMapMarkerAlt />  Shubhash Chowk, Kotputli Road,

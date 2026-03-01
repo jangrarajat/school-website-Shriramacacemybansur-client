@@ -71,7 +71,7 @@ export default function Admission() {
         <>
             <Navbar />
             <div className="h-20 w-full  flex justify-center items-center mt-10">
-                <button onClick={() => setAdmission("progress")} className={`   uppercase  hover:bg-blue-400  hover:text-white p-3 ${admission === "progress" ? "bg-blue-600  text-white" : null}`}>Admission Procss</button>
+                <button onClick={() => setAdmission("progress")} className={`   uppercase  hover:bg-blue-400  hover:text-white p-3 ${admission === "progress" ? "bg-blue-600  text-white" : null}`}>ADMISSIONS PROCESS</button>
                 <button onClick={() => setAdmission("structure")} className={`   uppercase   hover:bg-blue-400  hover:text-white p-3 ${admission === "structure" ? "bg-blue-600 text-white" : null}`}>Fee Structure</button>
                 <button onClick={() => setAdmission("form")} className={`   uppercase    hover:bg-blue-400  hover:text-white p-3 ${admission === "form" ? "bg-blue-600 text-white" : null}`}>Admission Form</button>
             </div>
@@ -79,7 +79,7 @@ export default function Admission() {
             {
                 admission === "form" ? (
                     <div className="admissionPage ">
-                        <h1 className=" uppercase"> Inquary Form</h1>
+                        <h1 className=" uppercase"> INQUIRY form</h1>
                         <p className="admissionSubtitle">
                             Apply for admission to our school.
                         </p>

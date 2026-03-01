@@ -8,7 +8,7 @@ export default function Topbar() {
                 {/* Contact Info */}
                 <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-[10px] md:text-xs">
                     <span className="flex items-center gap-1 font-sans"><FaPhoneAlt/> 7733902183</span>
-                    <span className="lowercase flex items-center gap-1 font-sans"> <FaEnvelope/> Shriramacacemybansur@gmail.com</span>
+                    <span className="lowercase flex items-center gap-1 font-sans"> <FaEnvelope/> shriramacademybansur@gmail.com</span>
                 </div>
 
                 {/* Timing & Socials */}
@@ -20,7 +20,7 @@ export default function Topbar() {
                     
                     <div className="icons flex items-center gap-3">
                         <a href="https://www.facebook.com/share/1FqqMpuE7m/" className="hover:text-blue-400"><FaFacebookF size={14} /></a>
-                        <a href="https://www.instagram.com/shriramacademybansur" className="hover:text-pink-400"><FaInstagram size={14} /></a>
+                        <a href="https://www.instagram.com/theshriramfoundationschool?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="hover:text-pink-400"><FaInstagram size={14} /></a>
                         <a href="https://youtube.com/@shriramacademybansur" className="hover:text-red-500"><FaYoutube size={14} /></a>
                     </div>
                 </div>

@@ -21,7 +21,7 @@ export default function About() {
 
                     <p>
 
-                        Excellence in Education Since 2010
+                        Excellence in Education Since 2019
 
                     </p>
 

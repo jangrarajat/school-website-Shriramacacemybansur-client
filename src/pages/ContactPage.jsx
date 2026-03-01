@@ -140,7 +140,7 @@ export default function ContactPage() {
 
                                 <p className="mb-3 flex items-center  gap-2">
 
-                                    <FaEnvelope /><b>Email:</b> Shriramacacemybansur@gmail.com
+                                    <FaEnvelope /><b>Email:</b> shriramacademybansur@gmail.com
 
                                 </p>
 
@@ -169,7 +169,7 @@ export default function ContactPage() {
                                     title="map"
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.861113061483!2d76.3312386754668!3d27.687931276192864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39725debf2bbbc63%3A0x857151dcddd92ca1!2zU2hyaXJhbSBBY2FkZW15!5e0!3m2!1sen!2sin!4v1710000000000"
                                     className="w-full h-80 rounded-lg"
-                                    allowfullscreen=""
+                                    allowFullscreen=""
                                     loading="lazy">
                                 </iframe>
 

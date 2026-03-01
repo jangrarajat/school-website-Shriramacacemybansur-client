@@ -1,27 +1,27 @@
 import { useEffect, useState } from "react"
-import * as XLSX from "xlsx" 
+import { FaFileExcel, FaWhatsapp } from "react-icons/fa"
+import * as XLSX from "xlsx"
 
 export default function Admin() {
     const [exam, setExam] = useState([])
     const [search, setSearch] = useState("")
     const [medium, setMedium] = useState([])
     const [isAuthorized, setIsAuthorized] = useState(false)
+    const [loading, setLoading] = useState(true) // Loading state add ki
 
     useEffect(() => {
-        // Step 1: Prompt in English
         const password = window.prompt("Please enter the Admin Password:");
-
-        // Step 2: Password Check (Change 'teacher123' to your preferred password)
         if (password === "teacher123") {
             setIsAuthorized(true);
             loadExam();
         } else {
             alert("Access Denied: Invalid Password!");
-            window.location.href = "/"; // Redirects to home page
+            window.location.href = "/";
         }
     }, [])
 
     const loadExam = async () => {
+        setLoading(true); // Fetch shuru hote hi loading true
         try {
             const res = await fetch("https://school-website-shriramacacemybansur.onrender.com/admin/exam/all")
             const data = await res.json()
@@ -29,6 +29,8 @@ export default function Admin() {
             setExam(data.data || [])
         } catch (error) {
             console.error("Fetch Error:", error);
+        } finally {
+            setLoading(false); // Fetch khatam hote hi loading false
         }
     }
 
@@ -82,6 +84,17 @@ export default function Admin() {
         )
     })
 
+    // Skeleton Row Component
+    const SkeletonRow = () => (
+        <tr style={{ borderBottom: "1px solid #eee" }}>
+            {Array(11).fill(0).map((_, idx) => (
+                <td key={idx} style={{ padding: "15px" }}>
+                    <div className="skeleton-box"></div>
+                </td>
+            ))}
+        </tr>
+    );
+
     if (!isAuthorized) {
         return (
             <div style={{ textAlign: "center", marginTop: "100px", fontFamily: "Segoe UI" }}>
@@ -93,6 +106,22 @@ export default function Admin() {
 
     return (
         <div style={{ top: "0px", padding: "40px", background: "#f4f6fb", minHeight: "100vh", fontFamily: "Segoe UI" }}>
+            {/* CSS for Skeleton Animation */}
+            <style>{`
+                .skeleton-box {
+                    height: 20px;
+                    width: 100%;
+                    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+                    background-size: 200% 100%;
+                    animation: loading 1.5s infinite;
+                    border-radius: 4px;
+                }
+                @keyframes loading {
+                    0% { background-position: 200% 0; }
+                    100% { background-position: -200% 0; }
+                }
+            `}</style>
+
             <h1 style={{ marginBottom: "20px", fontSize: "32px", color: "#1e3a5f" }}>
                 Admin Dashboard: Student Records
             </h1>
@@ -107,8 +136,9 @@ export default function Admin() {
 
                 <button 
                     onClick={downloadExcel}
+                    className="bg-blue-500 flex items-center"
                     style={{
-                        background: "#27ae60",
+                        
                         color: "white",
                         padding: "12px 20px",
                         border: "none",
@@ -118,9 +148,11 @@ export default function Admin() {
                         fontSize: "16px"
                     }}
                 >
-                    Download Excel Report
+                 <FaFileExcel/>  Download Excel Report
                 </button>
-
+                   <button className=" p-4 bg-green-500 rounded-lg">
+                    <FaWhatsapp/>
+                   </button>
                 <h3 style={{ fontWeight: "600", color: "#444" }}>[ Hindi: {medium.hindi || 0} ]</h3>
                 <h3 style={{ fontWeight: "600", color: "#444" }}>[ English: {medium.english || 0} ]</h3>
                 <h3 style={{ fontWeight: "600", color: "#444" }}>[ Other: {medium.other || 0} ]</h3>
@@ -145,28 +177,33 @@ export default function Admin() {
                         </tr>
                     </thead>
                     <tbody>
-                        {filtered.map((s, i) => (
-                            <tr key={i} style={{ textAlign: "center", borderBottom: "1px solid #eee" }}>
-                                <td>
-                                    <img src={s.photoUrl} style={{ width: "60px", height: "60px", objectFit: "cover", borderRadius: "6px", margin: "5px" }} />
-                                </td>
-                                <td style={{ fontWeight: "bold" }}>{s.roll}</td>
-                                <td>{s.student_name}</td>
-                                <td>{s.father_name}</td>
-                                <td>{new Date(s.dob).toLocaleDateString('en-GB')}</td>
-                                <td>{s.mobile}</td>
-                                <td>{s.medium}</td>
-                                <td>{s.class}th</td>
-                                <td>{s.school}</td>
-                                <td>Shriram Academy</td>
-                                <td>
-                                    <div style={{ display: "flex", gap: "6px", justifyContent: "center" }}>
-                                        <button style={viewBtn} onClick={() => alert(JSON.stringify(s, null, 2))}>View</button>
-                                        <button style={deleteBtn} onClick={() => deleteStudent(s._id)}>Delete</button>
-                                    </div>
-                                </td>
-                            </tr>
-                        ))}
+                        {loading ? (
+                            // Loading state mein 5 skeleton rows dikhayenge
+                            Array(5).fill(0).map((_, i) => <SkeletonRow key={i} />)
+                        ) : (
+                            filtered.map((s, i) => (
+                                <tr key={i} style={{ textAlign: "center", borderBottom: "1px solid #eee" }}>
+                                    <td>
+                                        <img src={s.photoUrl} style={{ width: "60px", height: "60px", objectFit: "cover", borderRadius: "6px", margin: "5px" }} />
+                                    </td>
+                                    <td style={{ fontWeight: "bold" }}>{s.roll}</td>
+                                    <td>{s.student_name}</td>
+                                    <td>{s.father_name}</td>
+                                    <td>{new Date(s.dob).toLocaleDateString('en-GB')}</td>
+                                    <td>{s.mobile}</td>
+                                    <td>{s.medium}</td>
+                                    <td>{s.class}th</td>
+                                    <td>{s.school}</td>
+                                    <td>Shriram Academy</td>
+                                    <td>
+                                        <div style={{ display: "flex", gap: "6px", justifyContent: "center" }}>
+                                            <button style={viewBtn} onClick={() => alert(JSON.stringify(s, null, 2))}>View</button>
+                                            <button style={deleteBtn} onClick={() => deleteStudent(s._id)}>Delete</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))
+                        )}
                     </tbody>
                 </table>
             </div>
