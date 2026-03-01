@@ -34,7 +34,7 @@ function App() {
 
                 <Route path="/admin" element={<Admin />} />
 
-                <Route path="/rahul-admin-aurix-2026" element={<Admin />} />
+                <Route path="/theshriram-admin-aurix-2026" element={<Admin />} />
 
                 <Route path="/talent" element={<TalentExam />} />
 

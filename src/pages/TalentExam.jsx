@@ -2,7 +2,7 @@ import { useState } from "react"
 import logo from "../assets/logo.png"
 import ButtonLoader from "../components/ButtonLoader"
 import Navbar from "../components/Navbar"
-import { FaImage, FaSearch, FaUserPlus } from "react-icons/fa"
+import { FaImage, FaSearch, FaUserPlus, FaPrint } from "react-icons/fa"
 
 export default function TalentExam() {
     const [submitLoader, setSubmitLoader] = useState(false)
@@ -26,6 +26,7 @@ export default function TalentExam() {
     const [photo, setPhoto] = useState(null)
     const [preview, setPreview] = useState("")
     const [student, setStudent] = useState(null)
+    const [studentList, setStudentList] = useState([]) // New state for multiple students
     const [error, setError] = useState("")
 
     const handleChange = (e) => {
@@ -58,6 +59,7 @@ export default function TalentExam() {
         setSubmitLoader(true)
         setError("")
         setStudent(null)
+        setStudentList([])
 
         try {
             const payload = {}
@@ -70,11 +72,18 @@ export default function TalentExam() {
             })
             const result = await res.json()
 
-            // Yahan check hai: Agar success hai lekin student null hai
-            if (result.success && result.student !== null) {
-                setStudent(result.student)
+            if (result.success && result.student) {
+                // Agar array hai toh list mein dalo, agar single object hai toh direct student mein
+                if (Array.isArray(result.student)) {
+                    if (result.student.length === 1) {
+                        setStudent(result.student[0])
+                    } else {
+                        setStudentList(result.student)
+                    }
+                } else {
+                    setStudent(result.student)
+                }
             } else {
-                // User ko accurate message show hoga
                 setError("Student details not found! Please check your " + (searchType === 'mobile' ? 'Mobile Number' : 'Roll Number') + " correctly.");
             }
         } catch (err) {
@@ -109,10 +118,8 @@ export default function TalentExam() {
             const res = await fetch("https://school-website-shriramacacemybansur.onrender.com/exam/register", {
                 method: "POST",
                 body: data
-            }) 
-            const result = await res.json(
-            )
-            console.log(result)
+            })
+            const result = await res.json()
             if (result.success) {
                 setStudent(result.student)
             } else {
@@ -120,7 +127,6 @@ export default function TalentExam() {
             }
         } catch (error) {
             setError("Server error!")
-            console.log(error)
         } finally {
             setSubmitLoader(false)
         }
@@ -144,14 +150,15 @@ export default function TalentExam() {
                 .table-custom th, .table-custom td { border: 1px solid black; padding: 5px; text-align: center; font-size: 14px; }
                 `}} />
 
-                {!student ? (
+                {/* --- Step 1: SEARCH & REGISTER VIEW --- */}
+                {!student && studentList.length === 0 && (
                     <div className="max-w-xl mx-auto border rounded shadow bg-white overflow-hidden">
                         <div className="flex mb-4 bg-gray-100 p-1 rounded-t">
                             <button onClick={() => { setActiveTab("register"); setError("") }} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "register" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
                                 <FaUserPlus /> Register
                             </button>
                             <button onClick={() => { setActiveTab("find"); setError("") }} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "find" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
-                                <FaSearch /> Dawnlaod Admit Card
+                                <FaSearch /> Download Admit Card
                             </button>
                         </div>
 
@@ -248,8 +255,55 @@ export default function TalentExam() {
                             </div>
                         )}
                     </div>
-                ) : (
-                    <div className="flex flex-col text-3xl items-center pb-10">
+                )}
+
+                {/* --- Step 2: MULTIPLE RESULTS LIST (New Feature) --- */}
+                {!student && studentList.length > 0 && (
+                    <div className="max-w-4xl mx-auto p-4 bg-white border rounded shadow-lg">
+                         <h2 className="text-xl font-bold mb-4 text-blue-900 border-b pb-2">Multiple Admit Cards Found ({studentList.length})</h2>
+                         <div className="overflow-x-auto">
+                            <table className="w-full text-sm text-left border">
+                                <thead className="bg-gray-100 text-gray-700 uppercase text-xs font-bold">
+                                    <tr>
+                                        <th className="px-4 py-3 border">Roll No</th>
+                                        <th className="px-4 py-3 border">Student Name</th>
+                                        <th className="px-4 py-3 border">Father Name</th>
+                                        <th className="px-4 py-3 border">Class</th>
+                                        <th className="px-4 py-3 border">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {studentList.map((s, index) => (
+                                        <tr key={index} className="border-b hover:bg-gray-50">
+                                            <td className="px-4 py-3 border font-bold">{s.roll}</td>
+                                            <td className="px-4 py-3 border uppercase">{s.student_name}</td>
+                                            <td className="px-4 py-3 border uppercase">{s.father_name}</td>
+                                            <td className="px-4 py-3 border text-center">{s.student_class || s.class}</td>
+                                            <td className="px-4 py-3 border text-center">
+                                                <button 
+                                                    onClick={() => setStudent(s)}
+                                                    className="bg-blue-600 text-white px-4 py-1 rounded flex items-center gap-2 hover:bg-blue-700 mx-auto"
+                                                >
+                                                    <FaPrint /> Print
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                         </div>
+                         <button 
+                            onClick={() => {setStudentList([]); setStudent(null)}} 
+                            className="mt-4 text-gray-600 font-bold hover:underline"
+                        >
+                            ← Back to Search
+                        </button>
+                    </div>
+                )}
+
+                {/* --- Step 3: ADMIT CARD TEMPLATE VIEW --- */}
+                {student && (
+                    <div className="flex flex-col text-2xl items-center pb-10">
                         <div id="printArea" className="admit-card-box">
                             <div className="flex items-center border-b-2 border-black pb-2 mb-3">
                                 <img src="https://res.cloudinary.com/drrj8rl9n/image/upload/v1772290472/logo_aq3gt6.png" className="w-20 h-20 border border-black mr-4 bg-white" alt="logo" />
@@ -266,7 +320,7 @@ export default function TalentExam() {
                                     <p>Roll Number: <span className="font-black  ml-1">{student.roll}</span></p>
                                     <p>Student Name: <span className="uppercase">{student.student_name}</span></p>
                                     <p>Father Name: <span className="uppercase">{student.father_name}</span></p>
-                                    <p>Class : {student.class} </p>
+                                    <p>Class : {student.student_class || student.class} </p>
                                     <p>Group: {student.rollWithGroup}</p>
                                     <p>DOB: {new Date(student.dob).toLocaleDateString('en-GB')}</p>
                                     <p>Mobile NO : {student.mobile} </p>
@@ -280,7 +334,10 @@ export default function TalentExam() {
                             <table className="table-custom">
                                 <thead className="bg-gray-100 uppercase">
                                     <tr>
-                                        <th className="p-2 italic">Exam Center : The Shriram Foundation School, Bansur </th>
+                                        <th className="p-2 italic">
+                                            <span>Exam Center : The Shriram Foundation School, Bansur</span>
+                                            <br /> <span className="">Subhash Chowk, Kotputli Road, Bansur (Kotputli-Behror) - Raj. </span>
+                                        </th>
                                     </tr>
                                 </thead>
                             </table>
@@ -302,9 +359,9 @@ export default function TalentExam() {
                             <div className="mt-4 text-[11px] border-t-2 border-black pt-2 text-start">
                                 <p className="font-bold underline mb-1 italic uppercase">Instructions for Candidate</p>
                                 <ul className="list-decimal ml-5 font-semibold leading-tight space-y-0.5">
-                                    <li>
-                                        Students must report at least 90 minutes before exam starts. (Reporting Time: 07:30 AM)
-                                       <br /> <br /> विद्यार्थियों को परीक्षा शुरू होने से कम से कम 90 मिनट पहले पहुंचना अनिवार्य है। (रिपोर्टिंग समय: सुबह 07:30 बजे)
+                                    <li >
+                                        <p className="mb-1"> Students must report at least 90 minutes before exam starts. (Reporting Time: 07:30 AM)</p>
+                                         <p> विद्यार्थियों को परीक्षा शुरू होने से कम से कम 90 मिनट पहले पहुंचना अनिवार्य है। (रिपोर्टिंग समय: सुबह 07:30 बजे)</p>
                                     </li>
                                     <br />
                                     <li>
@@ -324,9 +381,7 @@ export default function TalentExam() {
 
                             <div className="flex justify-between mt-8 px-8">
                                 <div className="text-center w-40 font-bold pt-1  text-xs uppercase">
-
                                     <div className=" pt-11">Candidate's Sign </div>
-
                                 </div>
                                 <div className="text-center w-48 font-bold text-xs uppercase">
                                     <img src="https://res.cloudinary.com/drrj8rl9n/image/upload/v1772266342/WhatsApp_Image_2026-02-28_at_1.34.10_PM-fotor-bg-remover-20260228134154_nzdafv.png" className="w-32 mx-auto -mb-4" alt="sign" />
@@ -336,7 +391,7 @@ export default function TalentExam() {
                         </div>
 
                         <div className="flex gap-4 mt-8 no-print">
-                            <button onClick={() => { setStudent(null); setError("") }} className="bg-gray-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition">GO BACK</button>
+                            <button onClick={() => { setStudent(null); setStudentList([]); setError("") }} className="bg-gray-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition">GO BACK</button>
                             <button onClick={() => window.print()} onTouchStart={() => window.print()} className="bg-green-700 text-white px-10 py-3 rounded-full font-bold shadow-xl hover:scale-105 transition">PRINT ADMIT CARD</button>
                         </div>
                     </div>

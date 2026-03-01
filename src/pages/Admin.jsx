@@ -6,6 +6,7 @@ export default function Admin() {
     const [exam, setExam] = useState([])
     const [search, setSearch] = useState("")
     const [medium, setMedium] = useState([])
+    const [group, setGroup] = useState([])
     const [isAuthorized, setIsAuthorized] = useState(false)
     const [loading, setLoading] = useState(true) // Loading state add ki
 
@@ -25,7 +26,9 @@ export default function Admin() {
         try {
             const res = await fetch("https://school-website-shriramacacemybansur.onrender.com/admin/exam/all")
             const data = await res.json()
+            console.log(data)
             setMedium(data.mediumStats)
+            setGroup(data.groupStats)
             setExam(data.data || [])
         } catch (error) {
             console.error("Fetch Error:", error);
@@ -134,11 +137,11 @@ export default function Admin() {
                     style={{ padding: "12px", width: "320px", border: "1px solid #ccc", borderRadius: "8px", fontSize: "16px" }}
                 />
 
-                <button 
+                <button
                     onClick={downloadExcel}
                     className="bg-blue-500 flex items-center"
                     style={{
-                        
+
                         color: "white",
                         padding: "12px 20px",
                         border: "none",
@@ -148,15 +151,19 @@ export default function Admin() {
                         fontSize: "16px"
                     }}
                 >
-                 <FaFileExcel/>  Download Excel Report
+                    <FaFileExcel />  Download Excel Report
                 </button>
-                   <button className=" p-4 bg-green-500 rounded-lg">
-                    <FaWhatsapp/>
-                   </button>
-                <h3 style={{ fontWeight: "600", color: "#444" }}>[ Hindi: {medium.hindi || 0} ]</h3>
-                <h3 style={{ fontWeight: "600", color: "#444" }}>[ English: {medium.english || 0} ]</h3>
-                <h3 style={{ fontWeight: "600", color: "#444" }}>[ Other: {medium.other || 0} ]</h3>
-                <h3 style={{ fontWeight: "bold", color: "#1e3a5f" }}>[ Total Records: {exam.length} ]</h3>
+                <button className=" p-4 bg-green-500 rounded-lg">
+                    <FaWhatsapp />
+                </button>
+                <h3 style={{  fontWeight: "bold", color: "#1e3a5f" }}>[ Hindi: {medium.hindi || 0} ]</h3>
+                <h3 style={{  fontWeight: "bold", color: "#1e3a5f" }}>[ English: {medium.english || 0} ]</h3>
+                <h3 style={{  fontWeight: "bold", color: "#1e3a5f" }}>[ Other: {medium.other || 0} ]</h3>
+                <h3 style={{ fontWeight: "bold", color: "#1e3a5f" }}>[ Group-A : {group.A || 0} ]</h3>
+                <h3 style={{ fontWeight: "bold", color: "#1e3a5f" }}>[ Group-B : {group.B || 0} ]</h3>
+                <h3 style={{ fontWeight: "bold", color: "#1e3a5f" }}>[ Group-C : {group.C || 0} ]</h3>
+                <h3 style={{ fontWeight: "bold", color: "#1e3a5f" }}>[ Group-D : {group.D || 0} ]</h3>
+                <h3 style={{ fontWeight: "bold", color: "#1e3a5f" }}>[ Total Records: {exam.length || 0} ]</h3>
             </div>
 
             <div style={{ background: "white", padding: "20px", borderRadius: "10px", boxShadow: "0px 5px 15px rgba(0,0,0,0.1)", overflow: "auto" }}>
@@ -171,6 +178,7 @@ export default function Admin() {
                             <th style={th}>Mobile</th>
                             <th style={th}>Medium</th>
                             <th style={th}>Class</th>
+                            <th style={th}>Group</th>
                             <th style={th}>School</th>
                             <th style={th}>Exam Center</th>
                             <th style={th}>Action</th>
@@ -192,7 +200,8 @@ export default function Admin() {
                                     <td>{new Date(s.dob).toLocaleDateString('en-GB')}</td>
                                     <td>{s.mobile}</td>
                                     <td>{s.medium}</td>
-                                    <td>{s.class}th</td>
+                                    <td>{s.class}</td>
+                                    <td>{s.rollWithGroup}</td>
                                     <td>{s.school}</td>
                                     <td>Shriram Academy</td>
                                     <td>
