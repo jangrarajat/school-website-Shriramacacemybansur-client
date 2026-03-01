@@ -206,7 +206,7 @@ export default function Admin() {
                                     <td>Shriram Academy</td>
                                     <td>
                                         <div style={{ display: "flex", gap: "6px", justifyContent: "center" }}>
-                                            <button style={viewBtn} onClick={() => alert(JSON.stringify(s, null, 2))}>View</button>
+                                           
                                             <button style={deleteBtn} onClick={() => deleteStudent(s._id)}>Delete</button>
                                         </div>
                                     </td>
