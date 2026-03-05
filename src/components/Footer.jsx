@@ -182,7 +182,7 @@ export default function Footer() {
 
                 <div className="copyright">
 
-                    © 2026 The Shriram Foundation School
+                    © 2026 The Shriram Foundation School. (SHRIRAM ACADEMY)
 
                 </div>
 
