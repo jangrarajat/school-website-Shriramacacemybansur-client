@@ -34,22 +34,14 @@ export default function TalentExam() {
     }
 
     const handlePhoto = (e) => {
-        const file = e.target.files[0]
+        const file = e.target.files[0];
         if (file) {
-            const fileSizeKB = file.size / 1024;
-            if (fileSizeKB > 150) {
-                setError("Image size must be less than 150KB! (Current: " + Math.round(fileSizeKB) + "KB)");
-                setPhoto(null);
-                setPreview("");
-                e.target.value = "";
-                return;
-            }
-            setError("");
-            setPhoto(file)
-            setPreview(URL.createObjectURL(file))
+            // Size validation wala poora block (if fileSizeKB > 150) hata diya gaya hai
+            setError(""); // Purana error clear karne ke liye
+            setPhoto(file);
+            setPreview(URL.createObjectURL(file));
         }
-    }
-
+    };
     const findAdmitCard = async (e) => {
         e.preventDefault()
         if (!searchQuery) {
@@ -237,7 +229,7 @@ export default function TalentExam() {
                                     <input className="border p-2 rounded border-gray-500" placeholder="Full Address" name="address" value={form.address || ""} onChange={handleChange} />
 
                                     <div className="mt-2">
-                                        <p className="text-[11px] font-bold text-red-600 uppercase mb-1">* Maximum Image Size: 150KB</p>
+                                        {/* <p className="text-[11px] font-bold text-red-600 uppercase mb-1">* Maximum Image Size: 150KB</p> */}
                                         <div className="flex flex-col cursor-pointer gap-1 justify-center items-center border-2 border-dashed p-3 rounded-lg border-gray-400 bg-gray-50 hover:bg-gray-100 transition">
                                             <label htmlFor="file" className="text-xs font-bold text-gray-600 flex flex-col items-center gap-2">
                                                 <FaImage className="text-2xl text-blue-500" />
@@ -260,8 +252,8 @@ export default function TalentExam() {
                 {/* --- Step 2: MULTIPLE RESULTS LIST (New Feature) --- */}
                 {!student && studentList.length > 0 && (
                     <div className="max-w-4xl mx-auto p-4 bg-white border rounded shadow-lg">
-                         <h2 className="text-xl font-bold mb-4 text-blue-900 border-b pb-2">Multiple Admit Cards Found ({studentList.length})</h2>
-                         <div className="overflow-x-auto">
+                        <h2 className="text-xl font-bold mb-4 text-blue-900 border-b pb-2">Multiple Admit Cards Found ({studentList.length})</h2>
+                        <div className="overflow-x-auto">
                             <table className="w-full text-sm text-left border">
                                 <thead className="bg-gray-100 text-gray-700 uppercase text-xs font-bold">
                                     <tr>
@@ -280,7 +272,7 @@ export default function TalentExam() {
                                             <td className="px-4 py-3 border uppercase">{s.father_name}</td>
                                             <td className="px-4 py-3 border text-center">{s.student_class || s.class}</td>
                                             <td className="px-4 py-3 border text-center">
-                                                <button 
+                                                <button
                                                     onClick={() => setStudent(s)}
                                                     className="bg-blue-600 text-white px-4 py-1 rounded flex items-center gap-2 hover:bg-blue-700 mx-auto"
                                                 >
@@ -291,9 +283,9 @@ export default function TalentExam() {
                                     ))}
                                 </tbody>
                             </table>
-                         </div>
-                         <button 
-                            onClick={() => {setStudentList([]); setStudent(null)}} 
+                        </div>
+                        <button
+                            onClick={() => { setStudentList([]); setStudent(null) }}
                             className="mt-4 text-gray-600 font-bold hover:underline"
                         >
                             ← Back to Search
@@ -361,13 +353,13 @@ export default function TalentExam() {
                                 <ul className="list-decimal ml-5 font-semibold leading-tight space-y-1 ">
                                     <li >
                                         <p className="mb-1"> Students must report at least 90 minutes before exam starts. (Reporting Time: 07:30 AM)</p>
-                                         <p> विद्यार्थियों को परीक्षा शुरू होने से कम से कम 90 मिनट पहले पहुंचना अनिवार्य है। (रिपोर्टिंग समय: सुबह 07:30 बजे)</p>
+                                        <p> विद्यार्थियों को परीक्षा शुरू होने से कम से कम 90 मिनट पहले पहुंचना अनिवार्य है। (रिपोर्टिंग समय: सुबह 07:30 बजे)</p>
                                     </li>
-                                   
+
                                     <li>
                                         Compulsory to carry Admit Card and Aadhaar Card (or valid Photo ID).
                                         <br />प्रवेश पत्र (Admit Card) और आधार कार्ड (या कोई वैध फोटो आईडी) लाना अनिवार्य है।
-                                    </li> 
+                                    </li>
                                     <li>Only blue or black ball pen is allowed. Use of pencil is strictly prohibited. <br />केवल नीले या काले बॉल पेन की अनुमति है। पेंसिल का उपयोग सख्त वर्जित है।</li>
                                     <li>Mobile phones, smart watches, calculators are strictly prohibited. <br />मोबाइल फोन, स्मार्ट वॉच, कैलकुलेटर आदि ले जाना सख्त मना है।</li>
                                     <li>Maintain silence, discipline, and good behavior. <br />शांति, अनुशासन और अच्छा व्यवहार बनाए रखें। </li>
@@ -393,6 +385,7 @@ export default function TalentExam() {
                         <div className="flex gap-4 mt-8 no-print">
                             <button onClick={() => { setStudent(null); setStudentList([]); setError("") }} className="bg-gray-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition">GO BACK</button>
                             <button onClick={() => window.print()} onTouchStart={() => window.print()} className="bg-green-700 text-white px-10 py-3 rounded-full font-bold shadow-xl hover:scale-105 transition">PRINT ADMIT CARD</button>
+                            <button onClick={() => window.location.reload()} className="bg-blue-600 text-white px-10 py-3 rounded-full font-bold shadow-xl hover:scale-105 transition">New Form</button>
                         </div>
                     </div>
                 )}
