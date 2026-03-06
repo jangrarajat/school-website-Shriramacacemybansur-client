@@ -329,6 +329,7 @@ export default function Admin() {
                                 <th style={th}>Father Name</th>
                                 <th style={th}>DOB</th>
                                 <th style={th}>Mobile</th>
+                                 <th style={th}>Address</th>
                                 <th style={th}>Medium</th>
                                 <th style={th}>Class</th>
                                 <th style={th}>Group</th>
@@ -352,6 +353,7 @@ export default function Admin() {
                                         <td>{s.father_name}</td>
                                         <td>{new Date(s.dob).toLocaleDateString('en-GB')}</td>
                                         <td>{s.mobile}</td>
+                                        <td  className="text-start">{s.address}</td>
                                         <td>{s.medium}</td>
                                         <td>{s.class}</td>
                                         <td>{s.rollWithGroup}</td>
