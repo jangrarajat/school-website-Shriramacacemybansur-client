@@ -367,7 +367,7 @@ export default function TalentExam() {
                                     <li>Students are not allowed to borrow stationery. <br />विद्यार्थियों को स्टेशनरी (पेन आदि) उधार लेने की अनुमति नहीं है।</li>
                                     <li>Write roll number and details clearly on answer sheet. <br />उत्तर पुस्तिका (Answer Sheet) पर अपना रोल नंबर और विवरण स्पष्ट रूप से लिखें। </li>
                                     <li>No student allowed to leave during the first hour. <br />परीक्षा के पहले एक घंटे के दौरान किसी भी छात्र को बाहर जाने की अनुमति नहीं दी जाएगी।</li>
-                                    <li>Follow all instructions from the invigilator. <br />कक्ष निरीक्षक (Invigilator) द्वारा दिए गए सभी निर्देशों का पालन करें।</li>
+                                    <li>All students must bring an Exam Pad with them while coming for the examination. <br />सभी विद्यार्थी परीक्षा देने आते समय तख्ती (Exam Pad) अनिवार्य रूप से साथ लेकर आएँ।</li>
                                 </ul>
                             </div>
 
