@@ -362,7 +362,6 @@ export default function TalentExam() {
                                     </li>
                                     <li>Only blue or black ball pen is allowed. Use of pencil is strictly prohibited. <br />केवल नीले या काले बॉल पेन की अनुमति है। पेंसिल का उपयोग सख्त वर्जित है।</li>
                                     <li>Mobile phones, smart watches, calculators are strictly prohibited. <br />मोबाइल फोन, स्मार्ट वॉच, कैलकुलेटर आदि ले जाना सख्त मना है।</li>
-                                    <li>Maintain silence, discipline, and good behavior. <br />शांति, अनुशासन और अच्छा व्यवहार बनाए रखें। </li>
                                     <li>Any form of cheating leads to immediate cancellation. <br />किसी भी प्रकार की नकल करने पर परीक्षा तुरंत रद्द कर दी जाएगी।</li>
                                     <li>Students are not allowed to borrow stationery. <br />विद्यार्थियों को स्टेशनरी (पेन आदि) उधार लेने की अनुमति नहीं है।</li>
                                     <li>Write roll number and details clearly on answer sheet. <br />उत्तर पुस्तिका (Answer Sheet) पर अपना रोल नंबर और विवरण स्पष्ट रूप से लिखें। </li>
