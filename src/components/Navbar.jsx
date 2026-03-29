@@ -55,7 +55,7 @@ export default function Navbar() {
                     <Link to="/" onClick={() => setMenu(false)} className=" text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition ">Home</Link>
                     <Link to="/about" onClick={() => setMenu(false)} className=" text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">About</Link>
                     <Link to="/admission" onClick={() => setMenu(false)} className=" text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Admission</Link>
-                   {/* <Link to="/talent" onClick={() => setMenu(false)} className="  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  text-nowrap transition">Talentine exam 2026</Link>*/}
+                   <Link to="/talent" onClick={() => setMenu(false)} className="  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  text-nowrap transition">Talentine exam 2026</Link>
                     <Link to="/gallery" onClick={() => setMenu(false)} className=" text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Gallery</Link>
                     <Link to="/contact" onClick={() => setMenu(false)} className=" text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Contact</Link>
                 </div>
