@@ -6,7 +6,7 @@ import { FaImage, FaSearch, FaUserPlus, FaPrint } from "react-icons/fa"
 
 export default function TalentExam() {
     const [submitLoader, setSubmitLoader] = useState(false)
-    const [activeTab, setActiveTab] = useState("register")
+    const [activeTab, setActiveTab] = useState("find")
     const [searchQuery, setSearchQuery] = useState("")
     const [searchType, setSearchType] = useState("mobile")
 
