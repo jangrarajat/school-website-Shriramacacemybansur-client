@@ -3,10 +3,14 @@ import logo from "../assets/logo.png"
 import ButtonLoader from "../components/ButtonLoader"
 import Navbar from "../components/Navbar"
 import { FaImage, FaSearch, FaUserPlus, FaPrint } from "react-icons/fa"
+import PDFA from "../assets/ansKey/A.pdf";
+import PDFB from "../assets/ansKey/B.pdf";
+import PDFC from "../assets/ansKey/C.pdf";
+import PDFD from "../assets/ansKey/D.pdf";
 
 export default function TalentExam() {
     const [submitLoader, setSubmitLoader] = useState(false)
-    const [activeTab, setActiveTab] = useState("find")
+    const [activeTab, setActiveTab] = useState("anskey")
     const [searchQuery, setSearchQuery] = useState("")
     const [searchType, setSearchType] = useState("mobile")
 
@@ -22,6 +26,15 @@ export default function TalentExam() {
         other_medium: "",
         student_class: ""
     })
+
+    const handleDownload = (pdfFile, groupName) => {
+        const link = document.createElement('a');
+        link.href = pdfFile;
+        link.download = `Answer_Key_Group_${groupName}.pdf`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
 
     const [photo, setPhoto] = useState(null)
     const [preview, setPreview] = useState("")
@@ -146,12 +159,16 @@ export default function TalentExam() {
                 {!student && studentList.length === 0 && (
                     <div className="max-w-xl mx-auto border rounded shadow bg-white overflow-hidden">
                         <div className="flex mb-4 bg-gray-100 p-1 rounded-t">
-                     {/*    <button onClick={() => { setActiveTab("register"); setError("") }} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "register" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
+                            {/*    <button onClick={() => { setActiveTab("register"); setError("") }} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "register" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
                                 <FaUserPlus /> Register
                             </button> */}
-                            <button onClick={() => { setActiveTab("find"); setError("") }} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "find" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
+                            {/* <button onClick={() => { setActiveTab("find"); setError("") }} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "find" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
                                 <FaSearch /> Download Admit Card
+                            </button> */}
+                            <button onClick={() => { setActiveTab("anskey"); setError("") }} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "anskey" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
+                                EXAM ANSWER KEY
                             </button>
+
                         </div>
 
                         <div className="w-full h-fit flex mb-5 justify-center pt-2">
@@ -187,7 +204,9 @@ export default function TalentExam() {
                                     {error && <p className="text-red-600 text-center font-bold bg-red-50 p-2 rounded border border-red-200">{error}</p>}
                                 </form>
                             </div>
-                        ) : (
+                        ) : null}
+
+                        {activeTab === "registration" ? (
                             <div className="p-4">
                                 <h1 className="text-3xl font-bold mb-4 text-center text-blue-900 uppercase tracking-tight">talentine exam form 2026</h1>
                                 <form onSubmit={submit} className="flex flex-col gap-3 rounded-xl">
@@ -245,7 +264,20 @@ export default function TalentExam() {
                                     {error && <p className="text-red-600 text-center font-bold bg-red-50 p-2 rounded border border-red-200">{error}</p>}
                                 </form>
                             </div>
-                        )}
+                        ) : null}
+
+                        {activeTab === "anskey" ? (
+                            <div className="p-4">
+                                <h1 className="text-3xl font-bold mb-4 text-center text-blue-900 uppercase tracking-tight">EXAM ANSWER KEY 2026</h1>
+                                <div className=" flex  flex-col gap-3 items-center" >
+
+                                    <div onClick={() => handleDownload(PDFA, "A")} className=" uppercase font-sans bg-blue-400 w-fit text-white  p-2 rounded-md px-10 active:scale-100  cursor-pointer font-extrabold  hover:scale-105 duration-300  ">Group A 📥</div>
+                                    <div onClick={() => handleDownload(PDFB, "B")} className=" uppercase font-sans bg-blue-400 w-fit text-white  p-2 rounded-md px-10 active:scale-100  cursor-pointer font-extrabold  hover:scale-105 duration-300  ">Group B 📥</div>
+                                    <div onClick={() => handleDownload(PDFC, "C")} className=" uppercase font-sans bg-blue-400 w-fit text-white  p-2 rounded-md px-10 active:scale-100  cursor-pointer font-extrabold  hover:scale-105 duration-300  ">Group C 📥</div>
+                                    <div onClick={() => handleDownload(PDFD, "D")} className=" uppercase font-sans bg-blue-400 w-fit text-white  p-2 rounded-md px-10 active:scale-100  cursor-pointer font-extrabold  hover:scale-105 duration-300  ">Group D 📥</div>
+                                </div>
+                            </div>
+                        ) : null}
                     </div>
                 )}
 

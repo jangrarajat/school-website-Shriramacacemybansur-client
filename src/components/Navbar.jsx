@@ -52,12 +52,12 @@ export default function Navbar() {
                     transition-all duration-300 ease-in-out
                     ${menu ? "translate-x-0" : "-translate-x-full md:translate-x-0"} uppercase  font-bold
                 `}>
-                    <Link to="/" onClick={() => setMenu(false)} className=" text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition ">Home</Link>
-                    <Link to="/about" onClick={() => setMenu(false)} className=" text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">About</Link>
-                    <Link to="/admission" onClick={() => setMenu(false)} className=" text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Admission</Link>
-                   <Link to="/talent" onClick={() => setMenu(false)} className="  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  text-nowrap transition">Talentine exam 2026</Link>
-                    <Link to="/gallery" onClick={() => setMenu(false)} className=" text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Gallery</Link>
-                    <Link to="/contact" onClick={() => setMenu(false)} className=" text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Contact</Link>
+                    <Link to="/" onClick={() => setMenu(false)} className="     rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition ">Home</Link>
+                    <Link to="/about" onClick={() => setMenu(false)} className="rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">About</Link>
+                    <Link to="/admission" onClick={() => setMenu(false)} className="rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Admission</Link>
+                   <Link to="/talent" onClick={() => setMenu(false)} className=" rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  text-nowrap transition"><div className=" absolute bg-yellow-400 text-[10px] font-thin px-[3px] bottom-7    rounded-md ">New</div> TALENTINE EXAM ANSWER KEY 2026</Link>
+                    <Link to="/gallery" onClick={() => setMenu(false)} className="rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Gallery</Link>
+                    <Link to="/contact" onClick={() => setMenu(false)} className="rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Contact</Link>
                 </div>
 
             </div>
