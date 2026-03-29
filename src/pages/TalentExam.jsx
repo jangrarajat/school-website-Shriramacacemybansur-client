@@ -146,9 +146,9 @@ export default function TalentExam() {
                 {!student && studentList.length === 0 && (
                     <div className="max-w-xl mx-auto border rounded shadow bg-white overflow-hidden">
                         <div className="flex mb-4 bg-gray-100 p-1 rounded-t">
-                        <button onClick={() => { setActiveTab("register"); setError("") }} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "register" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
+                     {/*    <button onClick={() => { setActiveTab("register"); setError("") }} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "register" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
                                 <FaUserPlus /> Register
-                            </button>
+                            </button> */}
                             <button onClick={() => { setActiveTab("find"); setError("") }} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "find" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
                                 <FaSearch /> Download Admit Card
                             </button>
