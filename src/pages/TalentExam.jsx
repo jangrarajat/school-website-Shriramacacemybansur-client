@@ -7,6 +7,7 @@ import PDFA from "../assets/ansKey/A.pdf";
 import PDFB from "../assets/ansKey/B.pdf";
 import PDFC from "../assets/ansKey/C.pdf";
 import PDFD from "../assets/ansKey/D.pdf";
+import DHINDI from "../assets/ansKey/D-HINDI.pdf"
 
 export default function TalentExam() {
     const [submitLoader, setSubmitLoader] = useState(false)
@@ -271,10 +272,11 @@ export default function TalentExam() {
                                 <h1 className="text-3xl font-bold mb-4 text-center text-blue-900 uppercase tracking-tight">EXAM ANSWER KEY 2026</h1>
                                 <div className=" flex  flex-col gap-3 items-center" >
 
-                                    <div onClick={() => handleDownload(PDFA, "A")} className=" uppercase font-sans bg-blue-400 w-fit text-white  p-2 rounded-md px-10 active:scale-100  cursor-pointer font-extrabold  hover:scale-105 duration-300  ">Group A 📥</div>
-                                    <div onClick={() => handleDownload(PDFB, "B")} className=" uppercase font-sans bg-blue-400 w-fit text-white  p-2 rounded-md px-10 active:scale-100  cursor-pointer font-extrabold  hover:scale-105 duration-300  ">Group B 📥</div>
-                                    <div onClick={() => handleDownload(PDFC, "C")} className=" uppercase font-sans bg-blue-400 w-fit text-white  p-2 rounded-md px-10 active:scale-100  cursor-pointer font-extrabold  hover:scale-105 duration-300  ">Group C 📥</div>
-                                    <div onClick={() => handleDownload(PDFD, "D")} className=" uppercase font-sans bg-blue-400 w-fit text-white  p-2 rounded-md px-10 active:scale-100  cursor-pointer font-extrabold  hover:scale-105 duration-300  ">Group D 📥</div>
+                                    <div onClick={() => handleDownload(PDFA, "A")} className="     uppercase font-sans bg-blue-400 w-64 text-white  p-2 rounded-md px-10 active:scale-100  cursor-pointer font-extrabold  hover:scale-105 duration-300  ">Group A 📥</div>
+                                    <div onClick={() => handleDownload(PDFB, "B")} className="     uppercase font-sans bg-blue-400 w-64 text-white  p-2 rounded-md px-10 active:scale-100  cursor-pointer font-extrabold  hover:scale-105 duration-300  ">Group B 📥</div>
+                                    <div onClick={() => handleDownload(PDFC, "C")} className="     uppercase font-sans bg-blue-400 w-64 text-white  p-2 rounded-md px-10 active:scale-100  cursor-pointer font-extrabold  hover:scale-105 duration-300  ">Group C 📥</div>
+                                    <div onClick={() => handleDownload(PDFD, "D")} className="     uppercase font-sans bg-blue-400 w-64 text-white  p-2 rounded-md px-10 active:scale-100  cursor-pointer font-extrabold  hover:scale-105 duration-300  ">Group D English📥</div>
+                                    <div onClick={() => handleDownload(DHINDI, "D")} className="  uppercase font-sans bg-blue-400  w-64 text-white  p-2 rounded-md px-10 active:scale-100  cursor-pointer font-extrabold  hover:scale-105 duration-300  ">Group D Hindi 📥</div>
                                 </div>
                             </div>
                         ) : null}
