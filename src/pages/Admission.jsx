@@ -203,33 +203,53 @@ export default function Admission() {
                                             <tbody class="text-gray-700">
                                                 <tr class="border-b hover:bg-gray-50">
                                                     <td class="p-4 font-semibold text-blue-800">LKG & UKG</td>
-                                                    <td class="p-4">12,000</td><td class="p-4">9,000</td><td class="p-4">9,000</td>
-                                                    <td class="p-4 text-center font-bold bg-blue-50">30,000</td>
+                                                    <td class="p-4">11,000</td><td class="p-4">8,500</td><td class="p-4">8,000</td>
+                                                    <td class="p-4 text-center font-bold bg-blue-50">27,500</td>
                                                 </tr>
                                                 <tr class="border-b hover:bg-gray-50">
                                                     <td class="p-4 font-semibold text-blue-800">1 & 2</td>
-                                                    <td class="p-4">13,000</td><td class="p-4">9,000</td><td class="p-4">9,000</td>
-                                                    <td class="p-4 text-center font-bold bg-blue-50">31,000</td>
+                                                    <td class="p-4">12,000</td><td class="p-4">8,500</td><td class="p-4">8,500</td>
+                                                    <td class="p-4 text-center font-bold bg-blue-50">29,000</td>
                                                 </tr>
                                                 <tr class="border-b hover:bg-gray-50">
-                                                    <td class="p-4 font-semibold text-blue-800">3 & 4</td>
-                                                    <td class="p-4">14,000</td><td class="p-4">10,000</td><td class="p-4">9,000</td>
+                                                    <td class="p-4 font-semibold text-blue-800">3 </td>
+                                                    <td class="p-4">12,500</td><td class="p-4">9,000</td><td class="p-4">9,000</td>
+                                                    <td class="p-4 text-center font-bold bg-blue-50">30,500</td>
+                                                </tr>
+                                                <tr class="border-b hover:bg-gray-50">
+                                                    <td class="p-4 font-semibold text-blue-800">  4</td>
+                                                    <td class="p-4">13,000</td><td class="p-4">9,500</td><td class="p-4">9,000</td>
+                                                    <td class="p-4 text-center font-bold bg-blue-50">31,500</td>
+                                                </tr>
+                                                <tr class="border-b hover:bg-gray-50">
+                                                    <td class="p-4 font-semibold text-blue-800">5  </td>
+                                                    <td class="p-4">13,500</td><td class="p-4">10,000</td><td class="p-4">9,500</td>
                                                     <td class="p-4 text-center font-bold bg-blue-50">33,000</td>
                                                 </tr>
                                                 <tr class="border-b hover:bg-gray-50">
-                                                    <td class="p-4 font-semibold text-blue-800">5 & 6</td>
-                                                    <td class="p-4">15,000</td><td class="p-4">10,000</td><td class="p-4">10,000</td>
-                                                    <td class="p-4 text-center font-bold bg-blue-50">35,000</td>
+                                                    <td class="p-4 font-semibold text-blue-800">  6</td>
+                                                    <td class="p-4">14,000</td><td class="p-4">11,000</td><td class="p-4">9,500</td>
+                                                    <td class="p-4 text-center font-bold bg-blue-50">34,500</td>
                                                 </tr>
                                                 <tr class="border-b hover:bg-gray-50">
-                                                    <td class="p-4 font-semibold text-blue-800">7 & 8</td>
-                                                    <td class="p-4">16,000</td><td class="p-4">11,500</td><td class="p-4">10,000</td>
-                                                    <td class="p-4 text-center font-bold bg-blue-50">37,500</td>
+                                                    <td class="p-4 font-semibold text-blue-800">7 </td>
+                                                    <td class="p-4">14,500</td><td class="p-4">11,000</td><td class="p-4">10,000</td>
+                                                    <td class="p-4 text-center font-bold bg-blue-50">35,500</td>
+                                                </tr>
+                                                <tr class="border-b hover:bg-gray-50">
+                                                    <td class="p-4 font-semibold text-blue-800">  8</td>
+                                                    <td class="p-4">15,000</td><td class="p-4">11,500</td><td class="p-4">10,000</td>
+                                                    <td class="p-4 text-center font-bold bg-blue-50">36,500</td>
                                                 </tr>
                                                 <tr class="hover:bg-gray-50">
-                                                    <td class="p-4 font-semibold text-blue-800">9 & 10</td>
-                                                    <td class="p-4">18,000</td><td class="p-4">12,000</td><td class="p-4">10,000</td>
-                                                    <td class="p-4 text-center font-bold bg-blue-50">40,000</td>
+                                                    <td class="p-4 font-semibold text-blue-800">9  </td>
+                                                    <td class="p-4">16,000</td><td class="p-4">12,000</td><td class="p-4">10,500</td>
+                                                    <td class="p-4 text-center font-bold bg-blue-50">38,500</td>
+                                                </tr>
+                                                <tr class="hover:bg-gray-50">
+                                                    <td class="p-4 font-semibold text-blue-800">  10</td>
+                                                    <td class="p-4">16,000</td><td class="p-4">12,000</td><td class="p-4">10,500</td>
+                                                    <td class="p-4 text-center font-bold bg-blue-50">38,500</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -250,32 +270,105 @@ export default function Admission() {
                                             <thead>
                                                 <tr class="bg-orange-50 text-blue-700 border-b border-gray-200">
                                                     <th class="p-4 font-bold">CLASS</th>
+                                                    <th class="p-4 font-bold">Hostel Fee</th>
+                                                    <th class="p-4 font-bold">School + Coaching Fee</th>
+                                                    <th class="p-4 font-bold">Total</th>
                                                     <th class="p-4 font-bold">1st Installment (Admission)</th>
-                                                    <th class="p-4 font-bold">2nd Installment (Sept)</th>
-                                                    <th class="p-4 font-bold">3rd Installment (Dec)</th>
-                                                    <th class="p-4 font-bold text-center bg-orange-100">TOTAL</th>
+                                                    <th class="p-4 font-bold">2nd Installment (after 3 months)</th>
+                                                    <th class="p-4 font-bold">3rd Installment (after 6 months)</th>
+                                                    <th class="p-4 font-bold text-center bg-orange-100">Total Payable</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="text-gray-700">
                                                 <tr class="border-b hover:bg-gray-50">
-                                                    <td class="p-4 font-semibold text-blue-700">2, 3 & 4</td>
-                                                    <td class="p-4">35,000</td><td class="p-4">35,000</td><td class="p-4">25,000</td>
-                                                    <td class="p-4 text-center font-bold bg-orange-50">95,000</td>
+                                                    <td class="p-4 font-semibold text-blue-700">2</td>
+                                                    <td class="p-4">62,500</td>
+                                                    <td class="p-4">29,000</td>
+                                                    <td class="p-4 font-medium">91,500</td>
+                                                    <td class="p-4">37,000</td>
+                                                    <td class="p-4">27,500</td>
+                                                    <td class="p-4">27,000</td>
+                                                    <td class="p-4 text-center font-bold bg-orange-50">91,500</td>
                                                 </tr>
                                                 <tr class="border-b hover:bg-gray-50">
-                                                    <td class="p-4 font-semibold text-blue-700">5 & 6</td>
-                                                    <td class="p-4">40,000</td><td class="p-4">35,000</td><td class="p-4">25,000</td>
-                                                    <td class="p-4 text-center font-bold bg-orange-50">100,000</td>
+                                                    <td class="p-4 font-semibold text-blue-700">3</td>
+                                                    <td class="p-4">64,000</td>
+                                                    <td class="p-4">30,500</td>
+                                                    <td class="p-4 font-medium">94,500</td>
+                                                    <td class="p-4">38,000</td>
+                                                    <td class="p-4">29,500</td>
+                                                    <td class="p-4">27,000</td>
+                                                    <td class="p-4 text-center font-bold bg-orange-50">94,500</td>
                                                 </tr>
                                                 <tr class="border-b hover:bg-gray-50">
-                                                    <td class="p-4 font-semibold text-blue-700">7 & 8</td>
-                                                    <td class="p-4">45,000</td><td class="p-4">35,000</td><td class="p-4">25,000</td>
-                                                    <td class="p-4 text-center font-bold bg-orange-50">105,000</td>
+                                                    <td class="p-4 font-semibold text-blue-700">4</td>
+                                                    <td class="p-4">65,500</td>
+                                                    <td class="p-4">31,500</td>
+                                                    <td class="p-4 font-medium">97,000</td>
+                                                    <td class="p-4">40,000</td>
+                                                    <td class="p-4">29,000</td>
+                                                    <td class="p-4">28,000</td>
+                                                    <td class="p-4 text-center font-bold bg-orange-50">97,000</td>
+                                                </tr>
+                                                <tr class="border-b hover:bg-gray-50">
+                                                    <td class="p-4 font-semibold text-blue-700">5</td>
+                                                    <td class="p-4">67,500</td>
+                                                    <td class="p-4">33,000</td>
+                                                    <td class="p-4 font-medium">1,00,500</td>
+                                                    <td class="p-4">41,000</td>
+                                                    <td class="p-4">31,000</td>
+                                                    <td class="p-4">28,500</td>
+                                                    <td class="p-4 text-center font-bold bg-orange-50">1,00,500</td>
+                                                </tr>
+                                                <tr class="border-b hover:bg-gray-50">
+                                                    <td class="p-4 font-semibold text-blue-700">6</td>
+                                                    <td class="p-4">68,000</td>
+                                                    <td class="p-4">34,500</td>
+                                                    <td class="p-4 font-medium">1,02,500</td>
+                                                    <td class="p-4">41,000</td>
+                                                    <td class="p-4">31,500</td>
+                                                    <td class="p-4">30,000</td>
+                                                    <td class="p-4 text-center font-bold bg-orange-50">1,02,500</td>
+                                                </tr>
+                                                <tr class="border-b hover:bg-gray-50">
+                                                    <td class="p-4 font-semibold text-blue-700">7</td>
+                                                    <td class="p-4">68,500</td>
+                                                    <td class="p-4">35,500</td>
+                                                    <td class="p-4 font-medium">1,04,000</td>
+                                                    <td class="p-4">42,000</td>
+                                                    <td class="p-4">31,000</td>
+                                                    <td class="p-4">31,000</td>
+                                                    <td class="p-4 text-center font-bold bg-orange-50">1,04,000</td>
+                                                </tr>
+                                                <tr class="border-b hover:bg-gray-50">
+                                                    <td class="p-4 font-semibold text-blue-700">8</td>
+                                                    <td class="p-4">70,000</td>
+                                                    <td class="p-4">36,500</td>
+                                                    <td class="p-4 font-medium">1,06,500</td>
+                                                    <td class="p-4">43,000</td>
+                                                    <td class="p-4">32,000</td>
+                                                    <td class="p-4">31,500</td>
+                                                    <td class="p-4 text-center font-bold bg-orange-50">1,06,500</td>
+                                                </tr>
+                                                <tr class="border-b hover:bg-gray-50">
+                                                    <td class="p-4 font-semibold text-blue-700">9</td>
+                                                    <td class="p-4">70,000</td>
+                                                    <td class="p-4">38,500</td>
+                                                    <td class="p-4 font-medium">1,08,500</td>
+                                                    <td class="p-4">44,000</td>
+                                                    <td class="p-4">32,500</td>
+                                                    <td class="p-4">32,000</td>
+                                                    <td class="p-4 text-center font-bold bg-orange-50">1,08,500</td>
                                                 </tr>
                                                 <tr class="hover:bg-gray-50">
-                                                    <td class="p-4 font-semibold text-blue-700">9 & 10</td>
-                                                    <td class="p-4">50,000</td><td class="p-4">35,000</td><td class="p-4">25,000</td>
-                                                    <td class="p-4 text-center font-bold bg-orange-50">110,000</td>
+                                                    <td class="p-4 font-semibold text-blue-700">10</td>
+                                                    <td class="p-4">70,000</td>
+                                                    <td class="p-4">38,500</td>
+                                                    <td class="p-4 font-medium">1,08,500</td>
+                                                    <td class="p-4">44,000</td>
+                                                    <td class="p-4">32,500</td>
+                                                    <td class="p-4">32,000</td>
+                                                    <td class="p-4 text-center font-bold bg-orange-50">1,08,500</td>
                                                 </tr>
                                             </tbody>
                                         </table>
