@@ -255,7 +255,7 @@ export default function Admission() {
                                         </table>
                                     </div>
                                     <div class="bg-gray-50 p-4 border-t italic text-sm text-gray-600">
-                                        * Registration Fee (New Admission Only): <b>Rs. 1,500/-</b> | * Transport charges apply based on route.
+                                        * Registration Fee (New Admission Only): <b>Rs. 1,000/-</b> | * Transport charges apply based on route.
                                     </div>
                                 </div>
 
