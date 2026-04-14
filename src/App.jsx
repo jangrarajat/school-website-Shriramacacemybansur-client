@@ -15,6 +15,7 @@ import { Routes, Route } from "react-router-dom"
 import TalentExam from "./pages/TalentExam"
 import ContactPage from "./pages/ContactPage"
 import GalleryPage from "./pages/GalleryPage"
+import LoginOption from "./pages/LoginOption"
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
                 <Route path="/admin/exam" element={<AdminExam />} />
                 <Route path="/contact" element={<ContactPage/>} />
                 <Route path="/gallery" element={<GalleryPage/>} />
+                <Route path="/loginOption" element={<LoginOption/>} />
 
 
 

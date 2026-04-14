@@ -17,7 +17,7 @@ export default function Navbar() {
                         <img
                             src="https://res.cloudinary.com/drrj8rl9n/image/upload/v1772290472/logo_aq3gt6.png"
                             className="w-12 h-12 md:w-36 md:h-20 object-contain transition-transform duration-300"
-                            alt="The Shriram Foundation School Logo"
+                            alt="Logo"
                         />
                     </div>
 
@@ -58,6 +58,8 @@ export default function Navbar() {
                    <Link to="/talent" onClick={() => setMenu(false)} className=" rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  text-nowrap transition"> TALENTINE EXAM ANSWER KEY 2026</Link>
                     <Link to="/gallery" onClick={() => setMenu(false)} className="rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Gallery</Link>
                     <Link to="/contact" onClick={() => setMenu(false)} className="rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Contact</Link>
+                    <Link to="/loginOption" onClick={() => setMenu(false)} className="rounded-lg  px-3  bg-blue-800 text-white   hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Login</Link>
+
                 </div>
 
             </div>
