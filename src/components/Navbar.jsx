@@ -15,7 +15,7 @@ export default function Navbar() {
                     {/* Enlarged Logo Container */}
                     <div className="relative overflow-hidden">
                         <img
-                            src="https://res.cloudinary.com/drrj8rl9n/image/upload/v1772290472/logo_aq3gt6.png"
+                            src="https://res.cloudinary.com/djtvxmttf/image/upload/v1776240518/PHOTO-2026-04-15-13-38-11_dhhavq.jpg"
                             className="w-12 h-12 md:w-36 md:h-20 object-contain transition-transform duration-300"
                             alt="Logo"
                         />
