@@ -16,7 +16,7 @@ function LoginOption() {
         { name: "Student", link: "https://aurixai.site/site/userlogin" },
         { name: "Parent", link: "https://aurixai.site/site/userlogin" },
         { name: "Teacher", link: "https://aurixai.site/site/Login" },
-        { name: "Accountant", link: "https://aurixai.site/site/Login" },
+
     ];
 
     return (
