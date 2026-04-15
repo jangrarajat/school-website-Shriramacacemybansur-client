@@ -22,8 +22,12 @@ function LoginOption() {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
             <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md text-center">
-                <h2 className="text-2xl flex-col font-bold text-gray-800 mb-6">
-                 
+                <h2 className="text-2xl flex  items-center  justify-center  flex-col font-bold text-gray-800 mb-6">
+                    <img 
+                    src="https://res.cloudinary.com/djtvxmttf/image/upload/v1776240518/PHOTO-2026-04-15-13-38-11_dhhavq.jpg" 
+                    alt="logo"
+                    className="h-20 w-30  "
+                    />
                     <span className="  text-blue-900 ">
                      WELOCME TO THE SHRIRAM FOUNDATION SCHOOL
                     </span>
