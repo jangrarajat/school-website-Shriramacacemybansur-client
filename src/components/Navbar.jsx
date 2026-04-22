@@ -58,10 +58,10 @@ export default function Navbar() {
                    <Link to="/talent" onClick={() => setMenu(false)} className=" rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  text-nowrap transition"> TALENTINE EXAM ANSWER KEY 2026</Link>
                     <Link to="/gallery" onClick={() => setMenu(false)} className="rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Gallery</Link>
                     <Link to="/contact" onClick={() => setMenu(false)} className="rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Contact</Link>
-                    <Link to="/loginOption" onClick={() => setMenu(false)} className="rounded-lg  px-3  bg-blue-800 text-white   hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Login</Link>
-
+                    {/* <Link to="/loginOption" onClick={() => setMenu(false)} className="rounded-lg  px-3  bg-blue-800 text-white   hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Login</Link> */}
+                    <a href="https://aurixai.site/site/login" onClick={() => setMenu(false)} className="rounded-lg  px-3  bg-blue-800 text-white   hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Login</a>
+                     
                 </div>
-
             </div>
         </nav>
     )
