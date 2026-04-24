@@ -7,7 +7,7 @@ export default function Navbar() {
     const [menu, setMenu] = useState(false)
 
     return (
-        <nav className="navbar bg-white shadow-md sticky top-10 z-50 pt-5">
+        <nav className="navbar bg-white shadow-md sticky top-10 z-40 pt-5">
             <div className="  mx-auto px-4 py-2 flex justify-between  items-center">
 
                 {/* Logo Section */}
@@ -55,7 +55,7 @@ export default function Navbar() {
                     <Link to="/" onClick={() => setMenu(false)} className="     rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition ">Home</Link>
                     <Link to="/about" onClick={() => setMenu(false)} className="rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">About</Link>
                     <Link to="/admission" onClick={() => setMenu(false)} className="rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Admission</Link>
-                   <Link to="/talent" onClick={() => setMenu(false)} className=" rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  text-nowrap transition"> TALENTINE EXAM ANSWER KEY 2026</Link>
+                   <Link to="/talent" onClick={() => setMenu(false)} className=" rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  text-nowrap transition">Latest update</Link>
                     <Link to="/gallery" onClick={() => setMenu(false)} className="rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Gallery</Link>
                     <Link to="/contact" onClick={() => setMenu(false)} className="rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Contact</Link>
                     {/* <Link to="/loginOption" onClick={() => setMenu(false)} className="rounded-lg  px-3  bg-blue-800 text-white   hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Login</Link> */}

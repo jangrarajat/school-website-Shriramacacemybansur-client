@@ -16,13 +16,14 @@ import TalentExam from "./pages/TalentExam"
 import ContactPage from "./pages/ContactPage"
 import GalleryPage from "./pages/GalleryPage"
 import LoginOption from "./pages/LoginOption"
+import NoticePopup from "./components/NoticePopup"
 
 function App() {
 
     return (
 
         <div>
-
+            <NoticePopup/>
             <Topbar />
 
             <Routes>

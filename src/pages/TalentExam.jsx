@@ -11,7 +11,7 @@ import DHINDI from "../assets/ansKey/D-HINDI.pdf"
 
 export default function TalentExam() {
     const [submitLoader, setSubmitLoader] = useState(false)
-    const [activeTab, setActiveTab] = useState("anskey")
+    const [activeTab, setActiveTab] = useState("update")
     const [searchQuery, setSearchQuery] = useState("")
     const [searchType, setSearchType] = useState("mobile")
 
@@ -167,7 +167,7 @@ export default function TalentExam() {
                                 <FaSearch /> Download Admit Card
                             </button> */}
                             <button onClick={() => { setActiveTab("anskey"); setError("") }} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "anskey" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
-                                EXAM ANSWER KEY
+                               Latest Update
                             </button>
 
                         </div>
@@ -277,6 +277,15 @@ export default function TalentExam() {
                                     <div onClick={() => handleDownload(PDFC, "C")} className="     uppercase font-sans bg-blue-400 w-64 text-white  p-2 rounded-md px-10 active:scale-100  cursor-pointer font-extrabold  hover:scale-105 duration-300  ">Group C 📥</div>
                                     <div onClick={() => handleDownload(PDFD, "D")} className="     uppercase font-sans bg-blue-400 w-64 text-white  p-2 rounded-md px-10 active:scale-100  cursor-pointer font-extrabold  hover:scale-105 duration-300  ">Group D English📥</div>
                                     <div onClick={() => handleDownload(DHINDI, "D")} className="  uppercase font-sans bg-blue-400  w-64 text-white  p-2 rounded-md px-10 active:scale-100  cursor-pointer font-extrabold  hover:scale-105 duration-300  ">Group D Hindi 📥</div>
+                                </div>
+                            </div>
+                        ) : null}
+                         {activeTab === "update" ? (
+                            <div className="p-4">
+                                <h1 className="text-3xl font-bold mb-4 text-center text-blue-900 uppercase tracking-tight">Latest update</h1>
+                                <div className=" flex  flex-col gap-3 items-center" >
+
+                                <img src="https://res.cloudinary.com/djtvxmttf/image/upload/v1777043845/1ffdfecc-7fba-4e9e-9a4e-db3ac363afad.png" alt="latest update " />
                                 </div>
                             </div>
                         ) : null}
