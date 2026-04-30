@@ -18,14 +18,14 @@ export default function NoticePopup() {
         {/* Close Button */}
         <button
           onClick={() => setShow(false)}
-          className="absolute top-2 right-2 text-black text-xl font-bold"
+          className="absolute top-2 -right-10 text-black text-xl font-bold"
         >
           ❌
         </button>
 
         {/* Image */}
         <img
-          src="https://res.cloudinary.com/djtvxmttf/image/upload/v1777043845/1ffdfecc-7fba-4e9e-9a4e-db3ac363afad.png" // image public folder me rakho
+          src="https://res.cloudinary.com/djtvxmttf/image/upload/v1777548696/ChatGPT_Image_Apr_30_2026_05_01_18_PM_lo9f11.png" // image public folder me rakho
           alt="Notice"
           className="w-full rounded-lg"
         />

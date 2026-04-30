@@ -166,15 +166,15 @@ export default function TalentExam() {
                             {/* <button onClick={() => { setActiveTab("find"); setError("") }} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "find" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
                                 <FaSearch /> Download Admit Card
                             </button> */}
-                            <button onClick={() => { setActiveTab("anskey"); setError("") }} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "anskey" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
+                            {/* <button onClick={() => { setActiveTab("anskey"); setError("") }} className={`flex-1 py-2 font-bold flex items-center justify-center gap-2 ${activeTab === "anskey" ? "bg-white text-blue-700 shadow-sm" : "text-gray-500"}`}>
                                Latest Update
-                            </button>
+                            </button> */}
 
                         </div>
 
-                        <div className="w-full h-fit flex mb-5 justify-center pt-2">
-                            <img className="w-56" src="https://res.cloudinary.com/drrj8rl9n/image/upload/v1772280942/Talentine_Logo_olmj8l.png" alt="" />
-                        </div>
+                        {/* <div className="w-full h-fit flex mb-5 justify-center pt-2">
+                            <img className="w-56" src="https://res.cloudinary.com/djtvxmttf/image/upload/v1777548696/ChatGPT_Image_Apr_30_2026_05_01_18_PM_lo9f11.png" alt="" />
+                        </div> */}
 
                         {activeTab === "find" ? (
                             <div className="p-6">
@@ -285,7 +285,7 @@ export default function TalentExam() {
                                 <h1 className="text-3xl font-bold mb-4 text-center text-blue-900 uppercase tracking-tight">Latest update</h1>
                                 <div className=" flex  flex-col gap-3 items-center" >
 
-                                <img src="https://res.cloudinary.com/djtvxmttf/image/upload/v1777043845/1ffdfecc-7fba-4e9e-9a4e-db3ac363afad.png" alt="latest update " />
+                                <img src="https://res.cloudinary.com/djtvxmttf/image/upload/v1777548696/ChatGPT_Image_Apr_30_2026_05_01_18_PM_lo9f11.png" alt="latest update " />
                                 </div>
                             </div>
                         ) : null}
