@@ -17,13 +17,15 @@ import ContactPage from "./pages/ContactPage"
 import GalleryPage from "./pages/GalleryPage"
 import LoginOption from "./pages/LoginOption"
 import NoticePopup from "./components/NoticePopup"
+import TalentResult from "./pages/TalentResult"
+import ResultComingSoon from "./pages/ResultComingSoon"
 
 function App() {
 
     return (
 
         <div>
-            <NoticePopup/>
+            <NoticePopup />
             <Topbar />
 
             <Routes>
@@ -39,11 +41,13 @@ function App() {
                 <Route path="/theshriram-admin-aurix-2026" element={<Admin />} />
 
                 <Route path="/talent" element={<TalentExam />} />
+                <Route path="/talent-result" element={<ResultComingSoon/>} />
+
 
                 <Route path="/admin/exam" element={<AdminExam />} />
-                <Route path="/contact" element={<ContactPage/>} />
-                <Route path="/gallery" element={<GalleryPage/>} />
-                <Route path="/loginOption" element={<LoginOption/>} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/gallery" element={<GalleryPage />} />
+                <Route path="/loginOption" element={<LoginOption />} />
 
 
 

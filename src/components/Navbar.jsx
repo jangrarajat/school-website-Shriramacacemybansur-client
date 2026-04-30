@@ -31,7 +31,7 @@ export default function Navbar() {
                              drop-shadow-[0_2px_2px_rgba(0,0,0,0.1)] 
                              /* Font details */
                               font-[serif]">
-                            The Shriram  <br  className="flex "/>Foundation  School
+                            The Shriram  <br className="flex " />Foundation  School
                         </h2>
                     </div>
                 </Link>
@@ -55,12 +55,13 @@ export default function Navbar() {
                     <Link to="/" onClick={() => setMenu(false)} className="     rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition ">Home</Link>
                     <Link to="/about" onClick={() => setMenu(false)} className="rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">About</Link>
                     <Link to="/admission" onClick={() => setMenu(false)} className="rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Admission</Link>
-                   <Link to="/talent" onClick={() => setMenu(false)} className=" rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  text-nowrap transition">Latest update</Link>
+                    <Link to="/talent" onClick={() => setMenu(false)} className=" rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  text-nowrap transition">Latest update</Link>
+                    <Link to="/talent-result" onClick={() => setMenu(false)} className=" rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  text-nowrap transition">TALENTINE EXAM 2026 RESULT</Link>
                     <Link to="/gallery" onClick={() => setMenu(false)} className="rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Gallery</Link>
                     <Link to="/contact" onClick={() => setMenu(false)} className="rounded-lg  text-gray-700 hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Contact</Link>
                     {/* <Link to="/loginOption" onClick={() => setMenu(false)} className="rounded-lg  px-3  bg-blue-800 text-white   hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Login</Link> */}
                     <a href="https://aurixai.site/site/login" onClick={() => setMenu(false)} className="rounded-lg  px-3  bg-blue-800 text-white   hover:bg-blue-500  hover:text-white text-center p-2  w-full  transition">Login</a>
-                     
+
                 </div>
             </div>
         </nav>
