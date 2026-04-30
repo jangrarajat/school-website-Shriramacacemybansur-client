@@ -5,7 +5,7 @@ import { resultA } from '../../public/GROUPA';
 import { resultB } from '../../public/GROUPB';
 import { resultC } from '../../public/GROUPC';
 function TalentResult() {
-  const [activeGroup, setActiveGroup] = useState('D');
+  const [activeGroup, setActiveGroup] = useState('A');
   const [searchMobile, setSearchMobile] = useState('');
   const [searchResults, setSearchResults] = useState([]); // Changed to array
   const [isSearchAttempted, setIsSearchAttempted] = useState(false);

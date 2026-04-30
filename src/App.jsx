@@ -41,7 +41,7 @@ function App() {
                 <Route path="/theshriram-admin-aurix-2026" element={<Admin />} />
 
                 <Route path="/talent" element={<TalentExam />} />
-                <Route path="/talent-result" element={<ResultComingSoon/>} />
+                <Route path="/talent-result" element={<TalentResult/>} />
 
 
                 <Route path="/admin/exam" element={<AdminExam />} />
