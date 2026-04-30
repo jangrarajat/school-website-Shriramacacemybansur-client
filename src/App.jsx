@@ -25,7 +25,7 @@ function App() {
     return (
 
         <div>
-            <NoticePopup />
+            {/* <NoticePopup /> */}
             <Topbar />
 
             <Routes>
